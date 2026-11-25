@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;900&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="guide-off"><!-- 導覽員暫時關閉：移除 guide-off 即可恢復 -->
 
 <!-- ============ ICON SPRITE ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -106,10 +106,10 @@
         <div class="stamp hm-stamp" aria-hidden="true">
           <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
             <circle cx="60" cy="60" r="58" fill="#f7f7f4" stroke="#151515" stroke-width="1"/>
-            <text font-family="IBM Plex Mono" font-size="10.2" letter-spacing="3" fill="#151515"><textPath href="#circ">SCROLL · ABOUT ME · SCROLL · ABOUT ME · </textPath></text></svg>
+            <text font-family="IBM Plex Mono" font-size="10.2" fill="#151515"><textPath href="#circ" textLength="288" lengthAdjust="spacing">SCROLL · ABOUT ME · SCROLL · ABOUT ME · </textPath></text></svg>
           <div class="core"><svg class="ic" style="width:24px;height:24px"><use href="#i-down"/></svg></div>
         </div>
-        <div class="hc-num rv"><b>12</b><span>Years of<br>designing<br>since 2012</span></div>
+        <div class="hc-num rv"><b>12</b><span>Years of<br>designing<br>since 2014</span></div>
       </div>
     </div>
   </div>
@@ -119,43 +119,45 @@
       <div class="hm-left">
         <h2 class="hm-h rv">About Me</h2>
         <figure class="hm-photo rv">
-          <label class="portrait-frame" id="portraitFrame">
-            <input type="file" accept="image/*" id="photoInput" hidden>
-            <div class="ph" id="ph">
-              <svg class="sil" viewBox="0 0 200 220"><circle cx="100" cy="70" r="46"/><path d="M10 220c0-60 40-96 90-96s90 36 90 96z"/></svg>
-              <span class="up"><svg class="ic"><use href="#i-camera"/></svg>點擊放入個人專業照</span>
-            </div>
-          </label>
-          <figcaption class="caption"><span class="mono">Fig.01 — Nicole Chang</span><span class="mono">Taipei</span></figcaption>
+          <div class="portrait-frame">
+            <img src="images/NicoleChang.png" alt="Nicole Chang 張彤芸 個人照">
+          </div>
+          <figcaption class="caption"><span class="mono">Nicole Chang · Web Designer</span><span class="mono">Taipei, Taiwan</span></figcaption>
         </figure>
       </div>
 
       <div class="hm-panel">
         <div class="hm-id rv">
-          <div><h3>Nicole Chang <span>張○○</span></h3><p>網頁設計師 · Web &amp; Visual Designer</p></div>
+          <div><h3>Nicole Chang <span>張彤芸</span></h3><p>網頁暨視覺設計師 · Web &amp; Visual Designer</p></div>
           <div class="hm-contact">
-            <button data-copy="0912-345-678"><svg class="ic"><use href="#i-phone"/></svg>+886 912-345-678</button>
-            <button data-copy="nicole.design@example.com"><svg class="ic"><use href="#i-mail"/></svg>nicole.design@example.com</button>
+            <span><svg class="ic"><use href="#i-phone"/></svg>+886 9 34-282-605</span>
+            <a href="mailto:happytu16@gmail.com?subject=%E3%80%90%E4%BD%9C%E5%93%81%E9%9B%86%E4%BE%86%E4%BF%A1%E3%80%91%E6%83%B3%E8%88%87%20Nicole%20%E8%81%8A%E8%81%8A%E5%90%88%E4%BD%9C%EF%BC%8F%E8%81%B7%E7%BC%BA%E6%A9%9F%E6%9C%83&body=Nicole%20%E6%82%A8%E5%A5%BD%EF%BC%9A%0A%0A%E6%88%91%E5%9C%A8%E6%82%A8%E7%9A%84%E4%BD%9C%E5%93%81%E9%9B%86%E7%B6%B2%E7%AB%99%E7%9C%8B%E5%88%B0%E6%82%A8%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E9%80%B2%E4%B8%80%E6%AD%A5%E8%88%87%E6%82%A8%E8%81%8A%E8%81%8A%E3%80%82%0A%0A%E3%83%BB%E5%85%AC%E5%8F%B8%EF%BC%8F%E5%96%AE%E4%BD%8D%EF%BC%9A%0A%E3%83%BB%E8%81%AF%E7%B5%A1%E4%BA%BA%EF%BC%9A%0A%E3%83%BB%E8%81%B7%E7%BC%BA%E6%88%96%E5%90%88%E4%BD%9C%E5%85%A7%E5%AE%B9%EF%BC%9A%0A%E3%83%BB%E6%96%B9%E4%BE%BF%E8%81%AF%E7%B9%AB%E7%9A%84%E6%99%82%E9%96%93%E8%88%87%E6%96%B9%E5%BC%8F%EF%BC%9A%0A%0A%E6%9C%9F%E5%BE%85%E6%82%A8%E7%9A%84%E5%9B%9E%E8%A6%86%EF%BC%8C%E8%AC%9D%E8%AC%9D%EF%BC%81"><svg class="ic"><use href="#i-mail"/></svg>happytu16@gmail.com</a>
           </div>
         </div>
 
-        <p class="hm-intro rv">好的設計，是讓人不用多想就看懂。12 年來，我從印刷、電商一路走到 B2B 教育訓練產業，經手的多是資訊量大、專有名詞多的內容。我習慣先想清楚「誰在看、希望他做什麼」，再安排版面的輕重與節奏，讓重點自然浮現。資策會的前端訓練，讓我交出的不只是設計稿，而是能直接上線的頁面。</p>
+        <div class="hm-intro rv">
+          <p>好的設計，是讓人不用多想就能看懂，也願意多停留一點。</p>
+          <p>我從行銷企劃起步，接觸過關鍵字廣告、Facebook 廣告，後來轉往視覺設計，在燦坤累積了五年的廣告、EDM 與活動網頁設計經驗，目前則在精誠資訊負責網頁與平面設計。</p>
+          <p>因為有行銷背景，所以在設計之前，我習慣先思考「誰在看？希望他看到什麼？」再透過版面、色彩與文字安排，讓複雜的資訊變得簡單好懂。</p>
+          <p>這幾年也開始將 AI 運用在日常工作中，除了創意發想、圖片生成與網頁製作，也嘗試利用 AI 協助撰寫程式、批次處理大量檔案，以及將重複性的工作自動化，讓自己有更多時間專注在設計與創意上。</p>
+          <p>我喜歡研究新的工具，也享受從一個想法、一張設計稿，到最後親手將網頁完成上線的過程。</p>
+        </div>
 
         <div class="hm-exp rv">
           <h4><svg class="ic"><use href="#i-brief"/></svg>Experiences</h4>
           <div class="hm-tl"><i class="fill"></i>
-          <a href="#experience" class="hm-row"><span class="dot now"></span><span class="y">2022.03</span><span><b>○○資訊教育訓練中心</b>擔任 資深網頁設計師<em class="nowtag">NOW</em></span><svg class="ic"><use href="#i-arrow"/></svg></a>
-          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2018.07</span><span><b>星禾數位行銷有限公司</b>擔任 網頁設計師</span><svg class="ic"><use href="#i-arrow"/></svg></a>
-          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2015.04</span><span><b>樂購生活電商股份有限公司</b>擔任 電商視覺設計師</span><svg class="ic"><use href="#i-arrow"/></svg></a>
-          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2012.09</span><span><b>青田廣告設計工作室</b>擔任 美術設計</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot now"></span><span class="y">2020.05</span><span><b>精誠資訊股份有限公司</b>擔任 前端設計師、網頁設計師<em class="nowtag">NOW</em></span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2014.07</span><span><b>燦坤實業股份有限公司</b>擔任 視覺設計</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2013.03</span><span><b>典匠資訊股份有限公司</b>擔任 行銷專員</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2009.03</span><span><b>遠景顧問有限公司</b>擔任 行銷專員</span><svg class="ic"><use href="#i-arrow"/></svg></a>
         </div>
         </div>
 
         <div class="hm-exp rv">
           <h4><svg class="ic"><use href="#i-cap"/></svg>Education</h4>
           <div class="hm-tl"><i class="fill"></i>
-          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2018</span><span><b>資策會</b>前端網頁設計與開發養成班</span><svg class="ic"><use href="#i-arrow"/></svg></a>
-          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2012</span><span><b>○○科技大學</b>視覺傳達設計系 學士</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2019</span><span><b>資策會</b>前端網頁設計與開發養成班</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="#experience" class="hm-row"><span class="dot"></span><span class="y">2006</span><span><b>國立虎尾科技大學</b>多媒體設計系 大學畢業</span><svg class="ic"><use href="#i-arrow"/></svg></a>
         </div>
         </div>
 
@@ -254,49 +256,52 @@
   <div class="container">
     <div class="p-head rv">
       <div class="p-num">03</div>
-      <h2 class="p-title"><small>Experience · 經歷與技能</small>12 年，4 間公司，<br>一條清楚的路。</h2>
-      <p class="p-desc">從印刷到網頁、從視覺到程式，每一段經歷都讓我更懂得設計如何為商業目標服務。</p>
+      <h2 class="p-title"><small>Experience · 經歷與技能</small>先懂行銷，再做設計。</h2>
+      <p class="p-desc">從行銷企劃起步，到零售通路的廣告與 EDM，再到資訊業的網頁設計與前端切版。我知道設計要為誰而做，也能親手把它做到上線。</p>
     </div>
 
     <div class="jobs">
       <article class="job rv">
-        <div class="yr">2022<small>2022.03 — NOW</small></div>
-        <div><h3>資深網頁設計師</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>○○資訊教育訓練中心｜行銷企劃部</div>
-          <div class="tags"><span>網站設計</span><span>EDM</span><span>切版</span><span>設計規範</span></div></div>
+        <div class="yr">2020<small>2020.05 — NOW</small></div>
+        <div><h3>前端設計師、網頁設計師</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>精誠資訊股份有限公司｜台北市松山區</div>
+          <div class="tags"><span>網頁設計</span><span>平面設計</span><span>HTML / CSS</span><span>JavaScript</span></div></div>
         <ul>
-          <li>負責資安認證、AI 應用、開發者課程等系列課程的形象網站與一頁式 EDM，每年產出 30 件以上專案</li>
-          <li>建立部門 EDM 設計規範與元件庫，製作時間從 5 天縮短到 2 天</li>
-          <li>導入滾動動畫與互動內容，課程頁平均停留時間提升約 40%</li>
-          <li>與講師、PM 協作，把艱深的技術內容轉譯成好懂的視覺資訊</li>
+          <li>負責網頁設計與平面設計，從視覺設計到 HTML、CSS、JavaScript／jQuery 切版上線</li>
+          <li>製作資安認證、AI 應用等課程的形象網站、一頁式 EDM 與廣告 Banner</li>
+          <li>使用 Illustrator、Photoshop 完成數位與印刷物設計</li>
         </ul>
       </article>
       <article class="job rv">
-        <div class="yr">2018<small>2018.07 — 2022.02</small></div>
-        <div><h3>網頁設計師</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>星禾數位行銷有限公司</div>
-          <div class="tags"><span>活動網站</span><span>提案</span><span>RWD</span></div></div>
+        <div class="yr">2014<small>2014.07 — 2019.08</small></div>
+        <div><h3>視覺設計</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>燦坤實業股份有限公司｜台北市內湖區</div>
+          <div class="tags"><span>廣告</span><span>EDM</span><span>活動網頁</span><span>團隊管理</span></div></div>
         <ul>
-          <li>服務金融、保健、美妝等產業客戶，完成 40 件以上活動網站與 Landing Page</li>
-          <li>負責提案視覺與客戶簡報，提案成功率約 70%</li>
-          <li>與工程師協作 RWD 切版，確保設計還原度與跨瀏覽器相容</li>
+          <li>負責廣告與 EDM 設計</li>
+          <li>規劃與設計一頁式活動網頁</li>
+          <li>跨部門溝通，整合行銷與商品需求</li>
+          <li>協助主管面試及管理新進設計人員</li>
         </ul>
       </article>
       <article class="job rv">
-        <div class="yr">2015<small>2015.04 — 2018.06</small></div>
-        <div><h3>電商視覺設計師</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>樂購生活電商股份有限公司</div>
-          <div class="tags"><span>Banner</span><span>活動頁</span><span>商品視覺</span></div></div>
+        <div class="yr">2013<small>2013.03 — 2014.03</small></div>
+        <div><h3>行銷專員</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>典匠資訊股份有限公司｜台北市大安區</div>
+          <div class="tags"><span>網路商城</span><span>網站維護</span><span>行銷企劃</span></div></div>
         <ul>
-          <li>負責商品頁、檔期活動頁與首頁輪播 Banner，每月產出 150 張以上素材</li>
-          <li>規劃雙 11、週年慶等大型檔期主視覺，活動期間轉換率提升 25%</li>
-          <li>建立 Banner 模板系統，提升團隊產出效率</li>
+          <li>網路商城管理、產品行銷規劃</li>
+          <li>網站設計及管理維護</li>
+          <li>活動企劃執行及後續成效追蹤</li>
+          <li>參與 SBIR 專案，並負責設計文宣及一般行政事務</li>
         </ul>
       </article>
       <article class="job rv">
-        <div class="yr">2012<small>2012.09 — 2015.03</small></div>
-        <div><h3>美術設計</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>青田廣告設計工作室</div>
-          <div class="tags"><span>平面設計</span><span>排版</span><span>品牌識別</span></div></div>
+        <div class="yr">2009<small>2009.03 — 2012.09</small></div>
+        <div><h3>行銷專員</h3><div class="co"><svg class="ic"><use href="#i-brief"/></svg>遠景顧問有限公司｜台北市中正區</div>
+          <div class="tags"><span>廣告文案</span><span>EDM</span><span>影片剪輯</span><span>FB 廣告</span></div></div>
         <ul>
-          <li>負責 DM、海報、型錄等平面印刷設計，以及品牌識別的延伸應用</li>
-          <li>熟悉印刷流程與色彩管理，打下扎實的排版與字體基礎</li>
+          <li>監控關鍵字成效、操作 Facebook 廣告</li>
+          <li>聽取媒體簡報並負責溝通，與主管討論活動文宣</li>
+          <li>設計 EDM 和手冊、剪輯影片</li>
+          <li>維護網站及更新，提供客戶場地諮詢與服務</li>
         </ul>
       </article>
     </div>
@@ -305,14 +310,13 @@
       <div>
         <div class="label mono rv">Education · 學歷與進修</div>
         <div class="edu hl rv"><span class="icbox"><svg class="ic"><use href="#i-code"/></svg></span>
-          <div><h4>資策會｜前端網頁設計與開發養成班</h4><div class="when">2018 · 約 500 小時</div>
+          <div><h4>資策會｜前端網頁設計與開發養成班</h4><div class="when">2019.09 — 2020.02</div>
           <p>系統學習 HTML5、CSS3、JavaScript、jQuery、RWD 與 Git，結訓專題完成一個完整的響應式電商網站。從此能把設計稿直接做成可上線的頁面。</p></div></div>
         <div class="edu rv"><span class="icbox"><svg class="ic"><use href="#i-cap"/></svg></span>
-          <div><h4>○○科技大學｜視覺傳達設計系</h4><div class="when">2008 — 2012 · 學士</div>
-          <p>主修版面設計、字體學與品牌識別，畢業製作獲系上優選。</p></div></div>
+          <div><h4>國立虎尾科技大學｜多媒體設計系</h4><div class="when">2006.09 — 2008.06 · 大學畢業</div></div></div>
         <div class="edu rv"><span class="icbox"><svg class="ic"><use href="#i-award"/></svg></span>
           <div><h4>證照與持續學習</h4><div class="when">Certificates</div>
-          <p>Google UX Design 證書、Adobe 認證專家（ACP）。持續研究 AI 輔助設計工作流程。</p></div></div>
+          <p>TQC 電腦繪圖概論與數位色彩配色。持續研究 AI 輔助設計工作流程。</p></div></div>
       </div>
       <div class="rv">
         <div class="label mono">Skills · 技能工具</div>
@@ -335,10 +339,8 @@
     <h3 class="contact-hero rv">有好的內容？<br>讓我把它設計得<em>更好看</em>。</h3>
     <div class="c-grid">
       <div class="rv">
-        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-mail"/></svg></span><div><small class="mono">Email</small><b>nicole.design@example.com</b></div><button class="act" data-copy="nicole.design@example.com"><svg class="ic" style="width:15px;height:15px"><use href="#i-copy"/></svg>複製</button></div>
-        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-phone"/></svg></span><div><small class="mono">Phone</small><b>0912-345-678</b></div><button class="act" data-copy="0912-345-678"><svg class="ic" style="width:15px;height:15px"><use href="#i-copy"/></svg>複製</button></div>
-        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-chat"/></svg></span><div><small class="mono">LINE ID</small><b>nicole_design</b></div><button class="act" data-copy="nicole_design"><svg class="ic" style="width:15px;height:15px"><use href="#i-copy"/></svg>複製</button></div>
-        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-link"/></svg></span><div><small class="mono">Behance</small><b>behance.net/nicolechang</b></div><a class="act" href="https://www.behance.net/" target="_blank" rel="noopener"><svg class="ic" style="width:15px;height:15px"><use href="#i-arrow-ur"/></svg>前往</a></div>
+        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-mail"/></svg></span><div><small class="mono">Email</small><b>happytu16@gmail.com</b></div><a class="act" href="mailto:happytu16@gmail.com?subject=%E3%80%90%E4%BD%9C%E5%93%81%E9%9B%86%E4%BE%86%E4%BF%A1%E3%80%91%E6%83%B3%E8%88%87%20Nicole%20%E8%81%8A%E8%81%8A%E5%90%88%E4%BD%9C%EF%BC%8F%E8%81%B7%E7%BC%BA%E6%A9%9F%E6%9C%83&body=Nicole%20%E6%82%A8%E5%A5%BD%EF%BC%9A%0A%0A%E6%88%91%E5%9C%A8%E6%82%A8%E7%9A%84%E4%BD%9C%E5%93%81%E9%9B%86%E7%B6%B2%E7%AB%99%E7%9C%8B%E5%88%B0%E6%82%A8%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E9%80%B2%E4%B8%80%E6%AD%A5%E8%88%87%E6%82%A8%E8%81%8A%E8%81%8A%E3%80%82%0A%0A%E3%83%BB%E5%85%AC%E5%8F%B8%EF%BC%8F%E5%96%AE%E4%BD%8D%EF%BC%9A%0A%E3%83%BB%E8%81%AF%E7%B5%A1%E4%BA%BA%EF%BC%9A%0A%E3%83%BB%E8%81%B7%E7%BC%BA%E6%88%96%E5%90%88%E4%BD%9C%E5%85%A7%E5%AE%B9%EF%BC%9A%0A%E3%83%BB%E6%96%B9%E4%BE%BF%E8%81%AF%E7%B9%AB%E7%9A%84%E6%99%82%E9%96%93%E8%88%87%E6%96%B9%E5%BC%8F%EF%BC%9A%0A%0A%E6%9C%9F%E5%BE%85%E6%82%A8%E7%9A%84%E5%9B%9E%E8%A6%86%EF%BC%8C%E8%AC%9D%E8%AC%9D%EF%BC%81"><svg class="ic" style="width:15px;height:15px"><use href="#i-arrow-ur"/></svg>寫信</a></div>
+        <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-phone"/></svg></span><div><small class="mono">Phone</small><b>0934-282-605</b></div></div>
         <div class="c-row"><span class="icbox"><svg class="ic"><use href="#i-pin"/></svg></span><div><small class="mono">Location</small><b>台北市 · 可遠端</b></div></div>
       </div>
       <aside class="note rv">
@@ -373,6 +375,15 @@
 <div class="cursor" id="cursor"><span>看專案 <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></span></div>
 <div class="toast" id="toast"></div>
 
+<!-- ============ LIGHTBOX（Banner／平面／名片 放大展示） ============ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="作品放大檢視" hidden>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <button class="lb-x" id="lbX" aria-label="關閉"><svg class="ic"><use href="#i-close"/></svg></button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="上一件"><svg class="ic"><use href="#i-arrow-l"/></svg></button>
+  <button class="lb-nav next" id="lbNext" aria-label="下一件"><svg class="ic"><use href="#i-arrow"/></svg></button>
+  <div class="lb-cap"><div><b id="lbTitle"></b><small id="lbMeta"></small></div><span class="mono" id="lbCount"></span></div>
+</div>
+
 <!-- ============ GUIDE（預設問答導覽員：不連網、不需金鑰、零費用） ============ -->
 <div class="g-tease" id="gTease"><button aria-label="關閉" id="gTeaseX">×</button>嗨！我是導覽員，想快速認識 Nicole 嗎？</div>
 <button class="g-launch" id="gLaunch" aria-label="開啟導覽員"><span class="av">N</span><span>問問導覽員</span></button>
@@ -393,16 +404,18 @@
    type: web | edm | banner　tone: ink | accent | stone
    有真實作品圖時，加上 img:"images/檔名.jpg" 就會取代示意圖
    ============================================================ */
+/* Banner、平面、名片：點擊直接放大圖片（燈箱），不進內頁 */
+const LB_TYPES = ["banner","print","card"];
 const WORKS = [
   { type:"web", feature:true, tone:"ink", title:"國際資安認證課程形象網站", year:"2025",
-    client:"○○資訊教育訓練中心", role:"視覺設計、切版、動態效果", tools:"Figma、HTML/CSS、JS、SVG",
+    client:"恆逸教育訓練中心", role:"視覺設計、切版、動態效果", tools:"Figma、HTML/CSS、JS、SVG",
     bg:"整合九大國際原廠資安認證的課程入口網站。目標族群是企業 IT 主管與資安人員，需要在大量認證資訊中，快速找到適合自己的學習路徑。",
     points:["深色主調搭配單一強調色，建立權威、可信賴的形象","設計認證地圖與篩選器，讓使用者依職能快速找到課程","數字計數與 SVG 徽章動畫，強化專業感"],
     result:[["+48%","課程頁點擊率"],["2.6 分鐘","平均停留時間"]] },
   /* ---- 案例研究：有 cs 欄位就會改用 Case Study 版型 ----
      ○○ 處請換成實際數字；shots 的 src 填入圖片路徑後，虛線提示框就會換成圖片 */
   { type:"ai", tone:"ink", title:"用 AI 自動化流程，一次修正 3000+ 封 EDM 的資安弱點", year:"2026",
-    client:"○○資訊教育訓練中心", role:"問題分析、流程設計、AI 協作、品質驗證", tools:"AI 程式助理、資安弱點掃描、Git（請依實際工具修改）",
+    client:"恆逸教育訓練中心", role:"問題分析、流程設計、AI 協作、品質驗證", tools:"AI 程式助理、資安弱點掃描、Git（請依實際工具修改）",
     bg:"EDM 資安弱掃後，需要更新 jQuery、Bootstrap 等程式元件並調整載入設定。我判斷根本原因是「多版本並存」，設計了 AI 批次改寫加人工把關的流程，約 10 天完成 3000+ 封 EDM 的函式庫統一與舊頁面整理（手動預估約 3 個月）。",
     points:["看出真正的問題是多版本並存，不只是版本號太舊","選擇 Bootstrap 4.6.2 + jQuery 3.8.0，兼顧安全與不跑版","AI 負責大量掃描與改寫，我負責規則、驗證與抽樣檢查"],
     result:[["3000+","封 EDM 完成修正"],["○ → 1","jQuery 版本收斂"]],
@@ -446,70 +459,70 @@ const WORKS = [
              ["切換職務","改選「DevSecOps Engineer」，推薦路線即時更新，不用重新整理頁面。"],
              ["跨階段路線","選「Malware Analyst」時，標示的認證橫跨入門到專精，看得出完整的進修順序。"],
              ["完全隱藏","右上角切換成「完全隱藏」，沒用到的認證直接收起，只留下自己的路線。"]]},
-    client:"○○資訊教育訓練中心", role:"資訊架構、介面設計、前端切版、互動功能", tools:"HTML、CSS、JavaScript",
+    client:"恆逸教育訓練中心", role:"資訊架構、介面設計、前端切版、互動功能", tools:"HTML、CSS、JavaScript",
     bg:"EC-Council 有 30 多張資安認證，原廠的認證路線圖是一張資訊密集的靜態大圖，讀者很難找到「我該考哪一張」。這個頁面把路線圖重新設計成可以操作的儀表板：選擇自己的職務或想走的職涯方向，對應的認證就會即時標示出來，從「看懂一張圖」變成「找到自己的路線」。",
     points:["篩選面板提供兩種入口：「職務角色」適合已經在資安領域工作的人，「職涯方向」適合還在探索方向的人","認證依 Foundational、Entry、Core、Specialisations、Executive 五個階段分欄，由左到右就是進修順序，選擇後的紅色卡片連起來就是一條學習路線","未選用的認證提供兩種顯示模式：「半透明淡出」保留全貌、方便比較，「完全隱藏」只留下自己的路線，讓讀者依需求切換","「重設所有篩選」放在面板右上角，隨時回到完整版圖重新探索","深藍底搭配原廠紅色，延續品牌識別，被選中的卡片用整塊紅色而不只是外框，在深色背景上一眼就能辨識","手機版把篩選改成下拉選單，五個階段改為由上到下排列，操作邏輯與電腦版一致"],
     result:[["30+","認證即時篩選"],["2 種","未選用認證顯示模式"]] },
   { type:"edm", tone:"accent", title:"企業網路靶場 Cyber Range 實機攻防演練課程 EDM", year:"2025",
     shots:{desktop:"images/cyber-range-desktop.jpg", mobile:"images/cyber-range-mobile.jpg"},
-    client:"○○資訊教育訓練中心", role:"主視覺選圖與合成、文案架構、版面設計、切版", tools:"Photoshop、HTML、CSS",
+    client:"恆逸教育訓練中心", role:"主視覺選圖與合成、文案架構、版面設計、切版", tools:"Photoshop、HTML、CSS",
     bg:"與國際資安原廠合作、全台獨家的網路靶場實機攻防課程 EDM。讀者是資安工程師與企業資安主管，頁面要傳達「真槍實彈」的實戰感，並在一頁內說清楚靶場規模、課程特色、講師背景、四階段課程內容與優惠方案。",
     points:["主視覺以騎士在火光中出陣的畫面，呼應「資安人的決戰時刻」，圖像與文案講同一件事","全頁以暗色調搭配橘紅火光延伸，跳脫一般課程 EDM 的明亮風格，營造攻防演練的緊張感","靶場規模以「500 台靶機、40 個 chain、130 種手法」三組大數字呈現，讓讀者一眼抓到重點","四階段課程以圖卡時間軸排列，從靶場介紹到實戰演練循序呈現","手機版改為單欄，數據、圖卡與報名按鈕依閱讀順序重新排列"],
     result:[["4 階段","課程內容視覺化"],["2 版","電腦／手機 RWD"]] },
   { type:"banner", tone:"ink", title:"資安月活動 Banner 系列", year:"2025", label:"CYBER\nSECURITY\nMONTH", small:"早鳥 85 折",
-    client:"○○資訊教育訓練中心", role:"主視覺設計、多尺寸延展", tools:"Photoshop、Illustrator",
+    client:"恆逸教育訓練中心", role:"主視覺設計、多尺寸延展", tools:"Photoshop、Illustrator",
     bg:"年度資安月活動的主視覺與廣告素材，涵蓋 FB、IG、GDN 與官網輪播共 20 多種尺寸。",
     points:["建立可延展的版型網格，確保多尺寸視覺一致","以網格線與大字標題營造科技感","主訊息控制在 8 字內，提升廣告辨識度"],
     result:[["24 款","尺寸延展"],["1.8%","廣告點擊率"]] },
   { type:"edm", tone:"accent", title:"Aruba 原廠授權認證課程促銷 EDM", year:"2023",
     shots:{desktop:"images/aruba-desktop.jpg", mobile:"images/aruba-mobile.jpg"},
-    client:"○○資訊教育訓練中心", role:"文案架構、視覺設計、插圖編排、切版", tools:"Illustrator、Photoshop、HTML Email",
+    client:"恆逸教育訓練中心", role:"文案架構、視覺設計、插圖編排、切版", tools:"Illustrator、Photoshop、HTML Email",
     bg:"企業無線網路品牌 Aruba 的原廠授權認證課程限時促銷 EDM。讀者是網路工程師，要在一封信裡說清楚「優惠價、總複習、送考試」三重優惠，並讓讀者快速比較兩門認證課程的價格。",
     points:["主標以「原廠獨家，限時 3 重送」搭配三顆圓形標籤，優惠內容一眼看懂","以品牌橘為主色，搭配漫畫風人物與放射線背景，營造促銷的熱鬧氣氛","「Aruba 就 ba 氣」標語結合品牌名稱與口語，讓技術課程更有親切感","三重優惠以「好康 1、2、3」編號依序展開，原價刪除線對比優惠價，降低比較成本","課程卡片與「線上洽詢課程」按鈕放在信件底部，讀完優惠後直接行動"],
     result:[["3 重","優惠資訊層級"],["2 版","電腦／手機版"]] },
   { type:"edm", tone:"ink", title:"辦公室 AI 技能升級課程 EDM", year:"2026",
     shots:{desktop:"images/office-ai-desktop.jpg", mobile:"images/office-ai-mobile.jpg"},
-    client:"○○資訊教育訓練中心", role:"文案架構、視覺設計、插圖、切版、互動設計", tools:"HTML、CSS、JavaScript、SVG",
+    client:"恆逸教育訓練中心", role:"文案架構、視覺設計、插圖、切版、互動設計", tools:"HTML、CSS、JavaScript、SVG",
     bg:"AI 辦公室生產力系列課程的一頁式 EDM。讀者是每天被報表、會議、簡報追著跑的上班族，頁面以「技能圖鑑」為主題，引導讀者依職能找到真正用得上的 AI 工作術。",
     points:["主標用提問切入：「你的工作，還能怎麼用 AI 升級？」，搭配技能圖鑑插圖與 Lv UP 徽章","Step 1 選擇職能：數據財會、行政專案、行銷設計三張角色卡片，點選後顯示對應痛點與核心工具","Step 2 分級課表：依 Lv.1～Lv.3 分級呈現課程，讀者能看出自己該從哪一階開始","Step 3 實戰場景：以 Excel 數據清理、PowerPoint Copilot 等實際操作畫面說明學完能做什麼","藍色手帳與方格紙風格，降低 AI 課程的距離感；手機版改為單欄，報名表單完整保留"],
     result:[["3 種","職能路徑"],["2 版","電腦／手機 RWD"]] },
   { type:"edm", tone:"ink", title:"AI × Excel 五階段課程 EDM", year:"2026",
-    client:"○○資訊教育訓練中心", role:"文案修飾、視覺設計、切版", tools:"Figma、HTML/CSS、SVG",
+    client:"恆逸教育訓練中心", role:"文案修飾、視覺設計、切版", tools:"Figma、HTML/CSS、SVG",
     bg:"從 Excel 基礎到 VBA 自動化的五階段 AI 課程，要讓上班族一眼看懂「我該從哪一階開始」。",
     points:["活潑插圖降低學習門檻","五階段以階梯式動態路徑呈現學習進程","每個階段搭配「學完你可以⋯」的成果描述"],
     result:[["+27%","報名轉換率"],["5 階","學習路徑視覺化"]] },
   { type:"banner", tone:"accent", title:"年終課程優惠廣告 Banner", year:"2025", label:"年終\n充電季", small:"全課程 8 折起",
-    client:"○○資訊教育訓練中心", role:"視覺設計", tools:"Photoshop、Illustrator、Midjourney",
+    client:"恆逸教育訓練中心", role:"視覺設計", tools:"Photoshop、Illustrator、Midjourney",
     bg:"年終促銷檔期的廣告素材，主打輕鬆、溫暖的進修氛圍，吸引一般上班族。",
     points:["大字標題搭配留白，在動態牆上快速被看見","用 AI 生成素材加速製作，再手工精修","另製作動態版本供 IG Reels 使用"],
     result:[["2.3%","廣告點擊率"],["-35%","單次點擊成本"]] },
   { type:"web", tone:"ink", title:"Claude Code 開發者學習路徑網站", year:"2026",
-    client:"○○資訊教育訓練中心", role:"概念設計、切版、動態效果", tools:"Figma、HTML/CSS、JS",
+    client:"恆逸教育訓練中心", role:"概念設計、切版、動態效果", tools:"Figma、HTML/CSS、JS",
     bg:"為開發者與企業規劃的三階段 AI 程式開發學習路徑介紹頁，風格貼近開發者熟悉的終端機介面。",
     points:["終端機與 git diff 視覺隱喻，貼近工程師語境","打字機動畫呈現指令操作過程","三階段路徑以時間軸卡片清楚區分對象"],
     result:[["+55%","頁面分享數"],["3 階段","學習路徑"]] },
   { type:"edm", tone:"stone", title:"企業包班方案電子報", year:"2024",
-    client:"○○資訊教育訓練中心", role:"版型設計、切版", tools:"Figma、HTML Email",
+    client:"恆逸教育訓練中心", role:"版型設計、切版", tools:"Figma、HTML Email",
     bg:"寄送給企業 HR 與主管的包班方案電子報，需要在 Outlook、Gmail 等各大郵件軟體正常顯示。",
     points:["表格式切版，確保 Outlook 正常顯示","以客戶案例與數據建立信任","單一明確的 CTA，引導預約諮詢"],
     result:[["+21%","諮詢表單數"],["99%","郵件軟體相容"]] },
   { type:"banner", tone:"stone", title:"新課上架社群貼文模板", year:"2024", label:"NEW\nCOURSE", small:"立即報名",
-    client:"○○資訊教育訓練中心", role:"模板系統設計", tools:"Figma、Canva",
+    client:"恆逸教育訓練中心", role:"模板系統設計", tools:"Figma、Canva",
     bg:"為行銷團隊設計可重複使用的社群貼文模板，讓非設計人員也能快速產出一致的視覺。",
     points:["建立 6 種版型，因應不同資訊量","色彩依課程類別對應","提供 Canva 模板與使用規範"],
     result:[["6 款","模板版型"],["-60%","製作時間"]] },
   { type:"print", tone:"accent", title:"課程溫度計活動 DM", year:"2024", img:"images/thermometer-flyer.jpg",
-    client:"○○資訊教育訓練中心", role:"活動視覺、標題字設計、資訊圖表、排版", tools:"Illustrator、Photoshop",
+    client:"恆逸教育訓練中心", role:"活動視覺、標題字設計、資訊圖表、排版", tools:"Illustrator、Photoshop",
     bg:"公開近三年各類課程修課人次排行的雙面 A4 活動 DM，同時搭配分享抽課程禮券活動。要讓讀者一眼看懂「哪些課程最熱門」，並清楚知道參加活動的步驟。",
     points:["以「溫度計」為主題，把課程排行做成溫度計圖表，第 1～3 名以紅、橘、黃呈現熱度","標題字特別設計：「溫」字加上太陽、「計」字延伸成溫度計，主題一眼就懂","正面以電腦版／手機版兩條步驟圖示說明活動流程，降低參加門檻","背面依資安、虛擬化、雲端等七大類別整理排行，雙欄排列方便快速瀏覽","粉紅搭配黃色營造輕鬆活潑的氛圍，與一般技術課程的嚴肅印象做出區隔"],
     result:[["7 大類","課程排行資訊圖表"],["雙面","A4 印刷 DM"]] },
   { type:"print", tone:"ink", title:"資安小白入門指南 雜誌跨頁廣告", year:"2023", img:"images/security-guide-spread.jpg",
-    client:"○○資訊教育訓練中心", role:"跨頁版面設計、主視覺插畫編排、文案排版", tools:"Illustrator、Photoshop",
+    client:"恆逸教育訓練中心", role:"跨頁版面設計、主視覺插畫編排、文案排版", tools:"Illustrator、Photoshop",
     bg:"刊登在雜誌上的雙頁跨頁廣告，對象是想踏入資安領域、卻不知道該從哪門課開始的新手。要在兩頁內介紹五門入門資安認證課程，並幫讀者判斷哪一門最適合自己。",
     points:["跨頁上方以等角（isometric）電路板插畫串連兩頁，Security+ → CCT → CND → SSCP → NSPA 的線路就是五門課的進階路徑","左頁以五張課程卡片並排，用星等標示難度，讓讀者一眼比較","每門課以「適合族群」開頭，讀者先找到自己的背景，再看課程內容","墨綠搭配螢光綠線條營造科技感，標題列用珊瑚橘做跳色，引導閱讀動線","左上角放置 QR Code，讓讀者從紙本直接連到線上索取課程優惠"],
     result:[["5 門","課程學習路徑"],["跨頁","雜誌廣告"]] },
   { type:"print", tone:"accent", title:"AWS 雲端課程促銷雜誌廣告", year:"2022", img:"images/aws-magazine-ad.jpg",
-    client:"○○資訊教育訓練中心", role:"廣告版面設計、主視覺概念、文案排版", tools:"Illustrator、Photoshop",
+    client:"恆逸教育訓練中心", role:"廣告版面設計、主視覺概念、文案排版", tools:"Illustrator、Photoshop",
     bg:"刊登於科技媒體的 AWS 雲端課程限時優惠廣告。優惠規則是「基礎＋進階」課程自由搭配，同時要列出近兩個月的開班課程與日期，資訊量大，必須讓讀者快速看懂怎麼報名最划算。",
     points:["以刀叉與餐盤為主視覺，呼應「基礎＋進階 任你自由配」的點餐概念，把課程組合變成一份套餐","墨綠與橘紅斜切的背景分別對應「基礎」與「進階」兩類課程，顏色貫穿標籤與課程清單","左上角「1+1=?」紅色圓章製造好奇心，引導讀者往下看優惠內容","兩種優惠以「好康 1、好康 2」並排卡片呈現，組合方式用色塊公式表示，一眼看懂差異","課程清單依基礎／進階分欄，課程名稱與開班日期用不同字重區分，方便快速查找"],
     result:[["2 種","優惠組合"],["9 門","課程開班資訊"]] },
@@ -519,7 +532,7 @@ const WORKS = [
     points:["沿用作品集的黑、白、朱紅三色，建立一致的個人識別","正面只放名字與職稱，背面放聯絡方式與作品集 QR Code","選用有紙紋的厚磅紙，搭配局部燙印增加質感"],
     result:[["2 面","正反面設計"],["1 套","識別延伸至網站"]] },
   { type:"card", tone:"stone", title:"教育訓練中心講師名片系統", year:"2024", name:"○○ 講師", job:"Senior Instructor", mark:"T",
-    client:"○○資訊教育訓練中心", role:"名片版型系統設計", tools:"Illustrator、InDesign",
+    client:"恆逸教育訓練中心", role:"名片版型系統設計", tools:"Illustrator、InDesign",
     bg:"為數十位講師與業務人員規劃統一的名片版型，需要容納中英文職稱、多組證照標章，同時保持版面整齊。",
     points:["建立固定網格，職稱與證照數量不同也能維持一致","中英文雙面設計，方便國際廠商交流","提供可直接替換資料的印刷檔範本"],
     result:[["40+","人員套用"],["1 天","新人名片完稿時間"]] },
@@ -543,7 +556,7 @@ const WORKS = [
     bg:"旅行時拍攝的照片與短片，並為每支影片設計統一風格的封面，練習用影像說故事。",
     points:["統一的調色風格，讓一系列照片看起來是同一本相簿","封面標題固定在相同位置，形成可辨識的系列感","從拍攝、剪輯到封面設計一手包辦"],
     result:[["○○ 支","Vlog 作品（請填入）"],["1 套","封面版型系統"]] }
-];
+].filter(w=>!(LB_TYPES.includes(w.type)&&!w.img)); /* 燈箱類作品沒有實際圖片（img）就先不顯示，補上圖片即會出現 */
 const CAT = { web:["網站設計","i-web"], edm:["一頁式 EDM","i-edm"], banner:["Banner 設計","i-banner"], print:["平面設計","i-print"], card:["名片設計","i-card"], ai:["AI 流程優化","i-flow"], other:["其他創作","i-sparkle"] };
 const TONE = { ink:["#151515","#f7f7f4"], accent:["#c8462c","#f7f7f4"], stone:["#d6d6d2","#151515"] };
 const PAGES = ["home","about","works","experience","contact"];
@@ -603,13 +616,15 @@ function mockup(w){
 /* ===== works list ===== */
 const grid=document.getElementById("worksGrid");
 grid.innerHTML=WORKS.map((w,i)=>`
-  <a class="work rv ${w.feature?"feature":""}" href="#work-${i+1}" data-type="${w.type}" data-cursor>
+  <a class="work rv ${w.feature?"feature":""}" href="${LB_TYPES.includes(w.type)?w.img:"#work-"+(i+1)}" ${LB_TYPES.includes(w.type)?`data-lb="${i}" data-cursor="放大看"`:"data-cursor"} data-type="${w.type}">
     <div class="fig">${mockup(w)}</div>
     <div class="meta"><span class="no">${pad(i+1)}</span><div><h3>${w.title}</h3><div class="cat">${ic(CAT[w.type][1])}${CAT[w.type][0]}</div></div><span class="yr">${w.year}</span></div>
   </a>`).join("");
 document.querySelectorAll("#filters button").forEach(b=>{
   const f=b.dataset.f;
-  b.querySelector("sup").textContent=f==="all"?WORKS.length:WORKS.filter(w=>w.type===f).length;
+  const cnt=f==="all"?WORKS.length:WORKS.filter(w=>w.type===f).length;
+  b.querySelector("sup").textContent=cnt;
+  if(!cnt){b.hidden=true;document.querySelectorAll(`[data-filter="${f}"]`).forEach(a=>a.closest("li").hidden=true);}
   b.onclick=()=>{
     document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("on",x===b));
     [...grid.children].forEach((el,i)=>{
@@ -652,8 +667,9 @@ function caseHTML(w){
       `<p>修好這一次還不夠，還要讓問題不會再發生：</p><ul class="cs-list">${c.prevent.map(x=>`<li>${ic(x.i)}<span><b>${x.t}</b>${x.d}</span></li>`).join("")}</ul>`)}`;
 }
 function renderDetail(i){
-  const w=WORKS[i], p=WORKS[(i-1+WORKS.length)%WORKS.length], n=WORKS[(i+1)%WORKS.length];
-  const pi=(i-1+WORKS.length)%WORKS.length+1, ni=(i+1)%WORKS.length+1;
+  const w=WORKS[i], L=WORKS.length, ok=k=>!LB_TYPES.includes(WORKS[k].type);
+  let a=i,b=i;do{a=(a-1+L)%L}while(!ok(a)&&a!==i);do{b=(b+1)%L}while(!ok(b)&&b!==i);
+  const p=WORKS[a], n=WORKS[b], pi=a+1, ni=b+1;
   document.getElementById("detail").innerHTML=`
     <a href="#works" class="back rv">${ic("i-arrow-l")}返回作品列表</a>
     <div class="d-head rv"><div><div class="k mono">${ic(CAT[w.type][1])}${CAT[w.type][0]} · ${w.year}</div><h1>${w.title}</h1></div><div class="big">${pad(i+1)}</div></div>
@@ -852,7 +868,7 @@ function go(step){
 document.getElementById("prevP").onclick=()=>go(-1);
 document.getElementById("nextP").onclick=()=>go(1);
 addEventListener("keydown",e=>{
-  if(e.target.closest("input,textarea"))return;
+  if(e.target.closest("input,textarea")||lb.classList.contains("open"))return;
   if(e.key==="ArrowRight")go(1);
   if(e.key==="ArrowLeft")go(-1);
 });
@@ -872,16 +888,62 @@ document.getElementById("menuBtn").onclick=()=>document.getElementById("nav").cl
 const cur=document.getElementById("cursor");
 addEventListener("pointermove",e=>{
   cur.style.left=e.clientX+"px";cur.style.top=e.clientY+"px";
-  cur.classList.toggle("show",!!e.target.closest("[data-cursor]"));
+  const t=e.target.closest("[data-cursor]");
+  cur.classList.toggle("show",!!t);
+  if(t){const lbl=t.dataset.cursor||"看專案";if(cur.dataset.lbl!==lbl){cur.dataset.lbl=lbl;cur.querySelector("span").innerHTML=lbl+' <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg>'}}
 });
 
-/* photo */
-let photoURL=null;
-document.getElementById("photoInput").addEventListener("change",e=>{
-  const f=e.target.files[0];if(!f)return;
-  photoURL=URL.createObjectURL(f);
-  document.getElementById("portraitFrame").insertAdjacentHTML("beforeend",`<img src="${photoURL}" alt="Nicole Chang 個人照" style="position:absolute;inset:0">`);
+/* ===== lightbox ===== */
+const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbStage=document.getElementById("lbStage");
+let lbList=[],lbPos=0,lbLast=null;
+function lbShow(){
+  const w=WORKS[lbList[lbPos]];
+  lb.classList.remove("zoom");
+  lbImg.src=w.img;lbImg.alt=w.title;
+  document.getElementById("lbTitle").textContent=w.title;
+  document.getElementById("lbMeta").textContent=`${w.client}｜${w.year}｜${w.role}`;
+  document.getElementById("lbCount").textContent=`${pad(lbPos+1)} / ${pad(lbList.length)}`;
+  lb.classList.toggle("single",lbList.length<2);
+}
+function lbOpen(i){
+  /* 左右切換：目前列表中看得到的燈箱作品 */
+  lbList=[...grid.querySelectorAll(".work[data-lb]:not(.hide)")].map(el=>+el.dataset.lb);
+  if(!lbList.includes(i))lbList=[i];
+  lbPos=lbList.indexOf(i);lbLast=document.activeElement;
+  lbShow();lb.hidden=false;void lb.offsetWidth;lb.classList.add("open");
+  document.documentElement.style.overflow="hidden";cur.classList.remove("show");
+  document.getElementById("lbX").focus();
+}
+function lbClose(){
+  lb.classList.remove("open");document.documentElement.style.overflow="";
+  setTimeout(()=>{if(!lb.classList.contains("open"))lb.hidden=true},300);
+  lbLast&&lbLast.focus();
+}
+function lbStep(d){if(lbList.length<2)return;lbPos=(lbPos+d+lbList.length)%lbList.length;lbShow()}
+grid.addEventListener("click",e=>{
+  const a=e.target.closest("[data-lb]");if(!a||e.metaKey||e.ctrlKey)return;
+  e.preventDefault();lbOpen(+a.dataset.lb);
 });
+document.getElementById("lbX").onclick=lbClose;
+document.getElementById("lbPrev").onclick=()=>lbStep(-1);
+document.getElementById("lbNext").onclick=()=>lbStep(1);
+lbStage.addEventListener("click",e=>{
+  if(e.target===lbImg){ /* 點圖片：切換原尺寸，方便看清楚小字 */
+    const r=lbImg.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;
+    lb.classList.toggle("zoom");
+    if(lb.classList.contains("zoom")){lbStage.scrollLeft=lbStage.scrollWidth*fx-lbStage.clientWidth/2;lbStage.scrollTop=lbStage.scrollHeight*fy-lbStage.clientHeight/2}
+  }else lbClose();
+});
+addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape"){if(lb.classList.contains("zoom"))lb.classList.remove("zoom");else lbClose()}
+  if(e.key==="ArrowRight")lbStep(1);
+  if(e.key==="ArrowLeft")lbStep(-1);
+});
+/* 手機：左右滑動切換 */
+let lbTX=null;
+lbStage.addEventListener("touchstart",e=>{lbTX=e.touches.length===1&&!lb.classList.contains("zoom")?e.touches[0].clientX:null},{passive:true});
+lbStage.addEventListener("touchend",e=>{if(lbTX===null)return;const dx=e.changedTouches[0].clientX-lbTX;if(Math.abs(dx)>50)lbStep(dx<0?1:-1);lbTX=null});
 
 /* toast, copy, cv */
 const toast=document.getElementById("toast");
@@ -915,13 +977,13 @@ addEventListener('resize',updateTL);
    導覽員：所有內容都在下方，直接修改文字即可
    完全在瀏覽器內執行，不連網、不需 API 金鑰、不會產生費用
    ============================================================ */
-const EMAIL="nicole.design@example.com";
+const EMAIL="happytu16@gmail.com";
 const GO=(label,hash,filter)=>({label,hash,filter});
 const INTENTS=[
  {keys:["你好","哈囉","hello","hi","嗨","安安"],
   a:"你好！我可以帶你快速認識 Nicole，也可以幫你翻到想看的頁面。想從哪裡開始？",chips:true},
  {keys:["你是誰","介紹","自我介紹","關於","她是","nicole","背景","是誰"],
-  a:"Nicole 是一位有 <b>12 年經驗的網頁設計師</b>，目前專注在 B2B 教育訓練產業，負責課程形象網站、一頁式 EDM 和廣告 Banner。<br><br>她從平面美術起步，後來在資策會學了前端，所以能把設計稿直接做成可上線的網頁。",
+  a:"Nicole 是一位有 <b>12 年經驗的網頁設計師</b>，目前專注在 B2B 教育訓練產業，負責課程形象網站、一頁式 EDM 和廣告 Banner。<br><br>她從行銷企劃起步，後來在資策會學了前端，所以能把設計稿直接做成可上線的網頁。",
   acts:[GO("看完整自我介紹","about")]},
  {keys:["代表作","最好","最滿意","推薦","精選","最強","一件"],
   a:"如果只能看一件，推薦<b>國際資安認證課程形象網站</b>：把九大原廠認證整理成一個好找、好懂的入口，課程頁點擊率提升 48%。",
@@ -951,10 +1013,10 @@ const INTENTS=[
   a:"作品分成七類：<b>網站設計</b>、<b>一頁式 EDM</b>、<b>Banner</b>、<b>平面設計</b>、<b>名片設計</b>、<b>AI 流程優化</b>，以及個人的<b>其他創作</b>。想先看哪一類？",
   acts:[GO("網站設計","works","web"),GO("一頁式 EDM","works","edm"),GO("Banner","works","banner"),GO("平面設計","works","print"),GO("名片設計","works","card"),GO("AI 流程優化","works","ai"),GO("其他創作","works","other")]},
  {keys:["經歷","年資","幾年","工作","公司","資歷","履歷"],
-  a:"Nicole 待過 4 間公司，從印刷、電商一路到 B2B 教育訓練：<ul><li>2022 起 資深網頁設計師（教育訓練中心）</li><li>2018 網頁設計師（數位行銷公司）</li><li>2015 電商視覺設計師</li><li>2012 美術設計（廣告工作室）</li></ul>",
+  a:"Nicole 待過 4 間公司，從行銷企劃一路走到網頁設計：<ul><li>2020 起 前端設計師、網頁設計師（精誠資訊）</li><li>2014 視覺設計（燦坤實業）</li><li>2013 行銷專員（典匠資訊）</li><li>2009 行銷專員（遠景顧問）</li></ul>",
   acts:[GO("看完整經歷","experience")]},
  {keys:["資策會","前端","切版","html","css","javascript","js","程式","code","工程","rwd","開發"],
-  a:"Nicole 在 2018 年完成<b>資策會前端網頁設計與開發養成班</b>（約 500 小時），會 HTML、CSS、JavaScript 和 RWD。<br><br>這代表她做的設計稿不只好看，而且做得出來；必要時她也能自己切版上線，省下和工程師來回溝通的時間。",
+  a:"Nicole 在 2020 年完成<b>資策會前端網頁設計與開發養成班</b>，會 HTML、CSS、JavaScript 和 RWD。<br><br>這代表她做的設計稿不只好看，而且做得出來；必要時她也能自己切版上線，省下和工程師來回溝通的時間。",
   acts:[GO("看技能清單","experience")]},
  {keys:["技能","工具","軟體","figma","photoshop","illustrator","ps","ai軟體","會什麼","會用"],
   a:"主要工具：<ul><li>設計：Figma、Photoshop、Illustrator、After Effects</li><li>前端：HTML、CSS、JavaScript、SVG 動畫</li><li>其他：Mailchimp、GA4、Claude、Midjourney</li></ul>",
@@ -974,7 +1036,7 @@ const INTENTS=[
   a:"薪資和報價會依職位內容或專案範圍而不同，建議直接寫信給 Nicole 討論。",
   acts:[{label:"複製 Email",copy:EMAIL},GO("聯絡頁","contact")]},
  {keys:["聯絡","email","mail","信箱","電話","line","找她","連絡"],
-  a:`可以寫信到 <b>${EMAIL}</b>，或到聯絡頁看電話和 LINE。`,
+  a:`可以寫信到 <b>${EMAIL}</b>，或到聯絡頁看電話。`,
   acts:[{label:"複製 Email",copy:EMAIL},GO("前往聯絡頁","contact")]},
  {keys:["職缺","配對","jd","適不適合","符不符合","徵才","職務"],jd:true,
   a:"請把<b>職缺內容</b>整段貼到下方輸入框，我會比對裡面提到的技能和工作內容，告訴你 Nicole 符合哪些條件，並推薦相關作品。"},
@@ -1021,7 +1083,7 @@ document.getElementById("gClose").onclick=gClose;
 document.getElementById("gTeaseX").onclick=e=>{e.stopPropagation();gT.classList.remove("show")};
 gT.onclick=()=>gOpen();
 document.addEventListener("click",e=>{const b=e.target.closest("[data-guide]");if(b)gOpen(b.dataset.guide)});
-setTimeout(()=>{if(!greeted)gT.classList.add("show")},4000);
+if(!document.body.classList.contains("guide-off"))setTimeout(()=>{if(!greeted)gT.classList.add("show")},4000);
 document.getElementById("gChips").innerHTML=CHIPS.map(c=>`<button type="button">${c}</button>`).join("");
 document.getElementById("gChips").onclick=e=>{const b=e.target.closest("button");if(b)ask(b.textContent)};
 
