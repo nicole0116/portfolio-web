@@ -515,7 +515,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .cs-dec small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent)}
 .cs-dec b{display:block;font-family:var(--serif-tc);font-size:19px;margin:6px 0 10px;line-height:1.5}
 .cs-dec p{font-size:14.5px;line-height:1.9}
-.cs-flow{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);counter-reset:f;border-top:1px solid var(--ink)}
+.cs-flow{list-style:none;display:grid;grid-template-columns:repeat(var(--n,5),1fr);counter-reset:f;border-top:1px solid var(--ink)}
 .cs-flow li{counter-increment:f;padding:20px 16px 4px 0;position:relative}
 .cs-flow li+li{padding-left:16px;border-left:1px dashed var(--hair)}
 .cs-flow li::before{content:"0" counter(f);display:block;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
@@ -549,6 +549,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .conv{width:100%;height:100%;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;background:var(--ink);color:var(--paper);padding:7% 6%;box-shadow:10px 10px 0 rgba(21,21,21,.1);font-family:var(--mono)}
 .conv .from{display:flex;flex-direction:column;gap:7%;height:100%;justify-content:center}
 .conv .from span{font-size:11px;padding:4px 8px;border:1px solid rgba(247,247,244,.35);color:rgba(247,247,244,.7);white-space:nowrap;text-decoration:line-through;text-decoration-color:var(--accent)}
+.conv.plain .from span{text-decoration:none}
 .conv svg{width:100%;height:100%}
 .conv svg path{fill:none;stroke:rgba(247,247,244,.4);stroke-width:1;stroke-dasharray:4 3}
 .conv svg path.m{stroke:var(--accent);stroke-width:2;stroke-dasharray:none}

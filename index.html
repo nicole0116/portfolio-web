@@ -462,6 +462,51 @@ const WORKS = [
                 {src:"",cap:"抽樣檢查畫面",tip:"同一封 EDM 修改前後的畫面並排，證明沒有跑版"}]
       }
     } },
+  /* ---- 案例二、三：還沒有實際數字，先用 outcome（文字成果）代替 results／kpi；補上數字後可改回 kpi＋results ---- */
+  { type:"web", tone:"ink", title:"Google Search Console 除錯與索引修復", year:"2026",
+    client:"恆逸教育訓練中心", role:"Search Console 監控、問題排查、修正與驗證", tools:"Google Search Console",
+    conv:{from:["索引錯誤","檢索錯誤","重新導向","canonical","robots"],to:["驗證修正","可被索引"],k:"FIXED",label:"Search Console 中的索引與檢索錯誤，經過修正後讓頁面可被索引"},
+    cs:{
+      lead:"官網在 Search Console 出現多個<em>索引與檢索錯誤</em>。我負責逐一判斷原因並修正，讓原本搜尋不到的課程頁面，<em>重新被 Google 收錄</em>。",
+      problem:[
+        "我是公司內負責 Search Console 監控與除錯的人。某段時間，報表中陸續出現多種索引與檢索錯誤。",
+        "這些錯誤會讓課程頁面在 Google 上搜尋不到，直接影響潛在學員找到課程，也就是直接影響招生。"],
+      decisions:[
+        {k:"判斷 01",t:"先處理影響最多頁面的問題",d:"錯誤類型很多，一個一個照順序修會很慢。我先依錯誤類型整理成清單，從影響頁面數最多的類型開始處理，讓修正的效果最快出現。"},
+        {k:"判斷 02",t:"先找到原因，再動手修",d:"同樣的錯誤訊息，背後的原因可能不一樣。先確認是網址、重新導向、canonical 標籤還是 robots 設定造成的，才不會修了這裡、又壞了那裡。"}],
+      flowTitle:"我的做法",
+      flow:[
+        {t:"分類錯誤",who:"me",d:"依 Search Console 的錯誤類型整理清單，找出影響最多頁面的問題先處理。"},
+        {t:"找出原因",who:"me",d:"逐一檢查網址、重新導向、canonical 標籤與 robots 設定，找出每一類錯誤的真正原因。"},
+        {t:"修正",who:"me",d:"依查到的原因，對症修正網站設定與頁面內容。"},
+        {t:"驗證",who:"me",d:"在 Search Console 按「驗證修正」，並用網址檢查工具確認頁面可被索引。"}],
+      outcome:[
+        {i:"i-check",t:"錯誤逐一修正並送出驗證",d:"每一類錯誤都找出原因、完成修正，並在 Search Console 送出「驗證修正」。"},
+        {i:"i-chart",t:"有效索引頁數增加",d:"修正後，有效索引的頁數增加，原本搜尋不到的課程頁重新被 Google 收錄。"},
+        {i:"i-target",t:"學員更容易找到課程",d:"課程頁能在搜尋結果中出現，潛在學員搜尋時就能找到對應的課程。"}]
+    } },
+  { type:"ai", tone:"ink", title:"用 AI 協作寫 Python，自動產生全站 sitemap", year:"2026",
+    client:"恆逸教育訓練中心", role:"需求規劃、AI 協作開發、結果驗證", tools:"Python、AI 程式助理、Google Search Console",
+    conv:{plain:true,from:["網站網址","收錄規則","排除規則","Python 程式"],to:["sitemap.xml","提交成功"],k:"OUTPUT",label:"整理網站網址並依規則過濾，由 Python 程式產出 sitemap.xml"},
+    cs:{
+      lead:"官網頁面多，卻沒有自動產生 sitemap 的機制。我和 AI 協作寫了一支 <em>Python 程式</em>，自動整理全站網址，產出 <em>sitemap.xml</em> 並提交到 Search Console。",
+      problem:[
+        "網站沒有可用的 sitemap。頁面數量多，手動整理網址容易漏掉，之後每次有新頁面也很難持續更新。",
+        "沒有 sitemap，新上線的課程頁要更久才會被 Google 發現，學員也就更晚搜尋得到。"],
+      decisions:[
+        {k:"判斷 01",t:"先定規則，再寫程式",d:"動手之前，先決定哪些頁面要收、哪些要排除，例如測試頁、已下架的頁面。規則清楚了，程式產出的結果才會是對的。"},
+        {k:"判斷 02",t:"AI 寫程式，我檢查結果",d:"程式交給 AI 產生，我負責描述需求、抽查輸出的網址。發現漏抓或多抓，就把問題回饋給 AI 調整，直到結果正確。"}],
+      flowTitle:"我的做法",
+      flow:[
+        {t:"定需求",who:"me",d:"決定哪些頁面要收、哪些要排除，例如測試頁、已下架頁。"},
+        {t:"AI 協作開發",who:"both",d:"把需求描述給 AI，產生 Python 程式，負責整理網站網址、過濾，並輸出 sitemap.xml。"},
+        {t:"檢查與修正",who:"both",d:"我抽查輸出結果，找出漏抓或多抓的網址，再請 AI 調整程式。"},
+        {t:"提交",who:"me",d:"上傳 sitemap.xml，到 Search Console 提交，並確認狀態為「成功」。"}],
+      outcome:[
+        {i:"i-check",t:"sitemap 提交成功",d:"sitemap.xml 已上傳並提交到 Search Console，狀態顯示「成功」。"},
+        {i:"i-code",t:"網址自動整理，不再靠手動",d:"由程式依規則整理全站網址，避免漏頁；之後有新頁面，重新執行程式就能更新。"},
+        {i:"i-target",t:"新課程頁更快被找到",d:"有了 sitemap，新上線的課程頁更容易被 Google 發現。"}]
+    } },
   { type:"web", feature:true, tone:"ink", title:"EC-Council 認證職涯地圖互動網頁", year:"2025",
     shots:{desktop:"images/ec-council-roadmap-desktop.jpg", mobile:"images/ec-council-roadmap-mobile.jpg"},
     demo:{dir:"images/ec-council-steps/step-", alt:"EC-Council 認證職涯地圖篩選畫面",
@@ -585,13 +630,14 @@ function mockup(w){
   if(w.shots){const th=f=>f.replace("images/","images/thumbs/");
     return `<div class="mk dev"><div class="dev-browser"><div class="bar"><i></i><i></i><i></i><u></u></div><div class="pg"><img src="${th(w.shots.desktop)}" alt="${w.title}（電腦版）" loading="lazy" decoding="async"></div></div><div class="dev-phone"><img src="${th(w.shots.mobile)}" alt="${w.title}（手機版）" loading="lazy" decoding="async"></div></div>`;}
   if(w.img)return `<img src="${w.img}" alt="${w.title}" loading="lazy">`;
-  if(w.type==="ai"){
-    const from=["jQuery 1.x","jQuery 2.x","jQuery 3.x","Bootstrap 3.x","Bootstrap 4.x"];
-    const ys=[10,30,50,70,90];
-    return `<div class="mk"><div class="conv" role="img" aria-label="多個版本的 jQuery 與 Bootstrap 收斂成同一組版本">
-      <div class="from">${from.map(f=>`<span>${f}</span>`).join("")}</div>
+  /* 收斂示意圖：作品有 conv 欄位就用它，否則沿用案例一（jQuery／Bootstrap 版本統一） */
+  if(w.conv||w.type==="ai"){
+    const c=w.conv||{from:["jQuery 1.x","jQuery 2.x","jQuery 3.x","Bootstrap 3.x","Bootstrap 4.x"],to:["jQuery 3.8.0","Bootstrap 4.6.2"],k:"UNIFIED",label:"多個版本的 jQuery 與 Bootstrap 收斂成同一組版本"};
+    const ys=c.from.map((_,i)=>(i+.5)/c.from.length*100);
+    return `<div class="mk"><div class="conv ${c.plain?"plain":""}" role="img" aria-label="${c.label}">
+      <div class="from">${c.from.map(f=>`<span>${f}</span>`).join("")}</div>
       <svg viewBox="0 0 100 100" preserveAspectRatio="none">${ys.map(y=>`<path d="M0 ${y}C50 ${y} 50 50 100 50"/>`).join("")}<path class="m" d="M60 50H100"/></svg>
-      <div class="to"><small>UNIFIED</small><span>jQuery 3.8.0</span><span>Bootstrap 4.6.2</span></div>
+      <div class="to"><small>${c.k}</small>${c.to.map(t=>`<span>${t}</span>`).join("")}</div>
     </div></div>`;
   }
   const [bg,fg] = TONE[w.tone];
@@ -665,23 +711,28 @@ function csShots(arr){
 const WHO={ai:["AI 執行","ai"],me:["我把關","me"],both:["AI＋我","both"]};
 function caseHTML(w){
   const c=w.cs;
-  const sec=(n,t,en,body)=>`<section class="cs-sec rv"><h4><span>${n}</span>${t}<small>${en}</small></h4><div>${body}</div></section>`;
+  /* kpi、manual、decisions、results／outcome、prevent、shots 都可省略；段落編號自動遞補 */
+  let n=0;
+  const sec=(t,en,body)=>`<section class="cs-sec rv"><h4><span>${String(++n).padStart(2,"0")}</span>${t}<small>${en}</small></h4><div>${body}</div></section>`;
+  const shots=k=>c.shots&&c.shots[k]?csShots(c.shots[k]):"";
+  const used=Object.keys(WHO).filter(k=>c.flow.some(f=>f.who===k));
   return `
     <div class="cs-lead rv"><p>${c.lead}</p>
-      <div class="cs-kpi">${c.kpi.map(k=>`<div><b>${k[0]}</b><small>${k[1]}</small></div>`).join("")}</div></div>
+      ${c.kpi?`<div class="cs-kpi">${c.kpi.map(k=>`<div><b>${k[0]}</b><small>${k[1]}</small></div>`).join("")}</div>`:""}</div>
     <div class="d-fig rv">${mockup(w)}</div>
-    ${sec("01","背景與問題","CONTEXT",
+    ${sec("背景與問題","CONTEXT",
       c.problem.map(x=>`<p>${x}</p>`).join("")+
-      `<div class="cs-note"><b>${c.manual[0]}</b><span>${c.manual[1]}</span></div>`+csShots(c.shots.problem))}
-    ${sec("02","我的判斷","DECISIONS",
-      `<div class="cs-dec">${c.decisions.map(d=>`<div><small>${d.k}</small><b>${d.t}</b><p>${d.d}</p></div>`).join("")}</div>`)}
-    ${sec("03","流程設計","WORKFLOW",
-      `<div class="cs-legend">${Object.values(WHO).map(v=>`<span class="who ${v[1]}">${v[0]}</span>`).join("")}</div>
-       <ol class="cs-flow">${c.flow.map(f=>`<li><b>${f.t}</b><span class="who ${WHO[f.who][1]}">${WHO[f.who][0]}</span><p>${f.d}</p></li>`).join("")}</ol>`+csShots(c.shots.flow))}
-    ${sec("04","成果","RESULTS",
-      `<div class="cs-res">${c.results.map(r=>`<div><b>${r[0]}</b><small>${r[1]}</small></div>`).join("")}</div>`+csShots(c.shots.result))}
-    ${sec("05","後續機制","PREVENTION",
-      `<p>修好這一次還不夠，還要讓問題不會再發生：</p><ul class="cs-list">${c.prevent.map(x=>`<li>${ic(x.i)}<span><b>${x.t}</b>${x.d}</span></li>`).join("")}</ul>`)}`;
+      (c.manual?`<div class="cs-note"><b>${c.manual[0]}</b><span>${c.manual[1]}</span></div>`:"")+shots("problem"))}
+    ${c.decisions?sec("我的判斷","DECISIONS",
+      `<div class="cs-dec">${c.decisions.map(d=>`<div><small>${d.k}</small><b>${d.t}</b><p>${d.d}</p></div>`).join("")}</div>`):""}
+    ${sec(c.flowTitle||"流程設計","WORKFLOW",
+      (used.length>1?`<div class="cs-legend">${used.map(k=>`<span class="who ${WHO[k][1]}">${WHO[k][0]}</span>`).join("")}</div>`:"")+
+      `<ol class="cs-flow" style="--n:${c.flow.length}">${c.flow.map(f=>`<li><b>${f.t}</b>${used.length>1?`<span class="who ${WHO[f.who][1]}">${WHO[f.who][0]}</span>`:""}<p>${f.d}</p></li>`).join("")}</ol>`+shots("flow"))}
+    ${sec("成果","RESULTS",
+      (c.results?`<div class="cs-res">${c.results.map(r=>`<div><b>${r[0]}</b><small>${r[1]}</small></div>`).join("")}</div>`:"")+
+      (c.outcome?`<ul class="cs-list">${c.outcome.map(x=>`<li>${ic(x.i)}<span><b>${x.t}</b>${x.d}</span></li>`).join("")}</ul>`:"")+shots("result"))}
+    ${c.prevent?sec("後續機制","PREVENTION",
+      `<p>修好這一次還不夠，還要讓問題不會再發生：</p><ul class="cs-list">${c.prevent.map(x=>`<li>${ic(x.i)}<span><b>${x.t}</b>${x.d}</span></li>`).join("")}</ul>`):""}`;
 }
 function renderDetail(i){
   const w=WORKS[i], L=WORKS.length, ok=k=>!LB_TYPES.includes(WORKS[k].type);
@@ -1021,7 +1072,10 @@ const INTENTS=[
   acts:[GO("只看名片設計","works","card")]},
  {keys:["ai 流程","自動化","資安","弱點","jquery","bootstrap","批次","效率","流程優化","ai 協作"],
   a:"Nicole 曾用 AI 協作處理一個資安問題：網站裡 <b>3000+ 封 EDM</b> 同時存在多個版本的 jQuery 與 Bootstrap。她找出根本原因，設計「AI 批次改寫＋人工把關」的流程，<b>約 10 天</b>完成手動預估要 3 個月的工作，把版本統一成一組，並建立共用路徑與標準範本，避免問題再發生。",
-  acts:[GO("看這個案例","work-2")]},
+  acts:[GO("看這個案例","work-1")]},
+ {keys:["seo","search console","搜尋","索引","google","sitemap","網站地圖","python","程式"],
+  a:"Nicole 也負責官網的 SEO 技術維護：在 <b>Google Search Console</b> 逐一排查索引與檢索錯誤，讓搜尋不到的課程頁重新被收錄；也和 AI 協作寫了一支 <b>Python 程式</b>，自動產生全站 sitemap 並提交到 Search Console。",
+  acts:[GO("看 Search Console 案例","work-2"),GO("看 sitemap 案例","work-3")]},
  {keys:["其他創作","貼圖","插畫","攝影","字體","vlog","side project","個人創作","興趣","作品以外"],
   a:"除了工作上的作品，Nicole 也有個人創作：<ul><li>原創 LINE 貼圖</li><li>中文字體排版練習</li><li>旅行攝影與 Vlog 封面</li></ul>這些作品展現了她在插畫、排版和影像上的能力。",
   acts:[GO("看其他創作","works","other")]},
