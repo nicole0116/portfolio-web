@@ -270,10 +270,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .filters button.on sup{color:var(--accent)}
 .works{display:grid;grid-template-columns:repeat(12,1fr);gap:56px 32px}
 .work{grid-column:span 4;cursor:none;display:block}
-.work.feature{grid-column:span 8;grid-row:span 2}
+/* 全部：第一排兩件代表作各占一半，其餘每排 3 件 */
+.work.feature{grid-column:span 6}
 .work.hide{display:none}
 .work .fig{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--paper-2)}
-.work.feature .fig{aspect-ratio:auto;height:calc(100% - 120px);min-height:420px}
+.work.feature .fig{aspect-ratio:16/10}
 .work .fig .mk{transition:transform 1s var(--ease-out)}
 .work:hover .fig .mk{transform:scale(1.04)}
 .work .meta{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;padding-top:16px;margin-top:16px;border-top:1px solid var(--ink);position:relative}
@@ -281,7 +282,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .work:hover .meta::before{width:100%}
 .work .no{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--accent);line-height:1.3}
 .work h3{font-family:var(--serif-tc);font-size:20px;line-height:1.4;font-weight:600}
-.work.feature h3{font-size:28px}
+.work.feature h3{font-size:24px}
 .work .cat{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-3);margin-top:4px}
 .work .cat .ic{width:15px;height:15px}
 .work .yr{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
@@ -493,7 +494,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .cs-lead{margin:48px 0 8px;padding:40px 44px;background:var(--ink);color:var(--paper)}
 .cs-lead p{font-family:var(--serif-tc);font-size:clamp(22px,2.6vw,34px);font-weight:600;line-height:1.5;max-width:900px}
 .cs-lead p em{font-style:normal;color:var(--accent)}
-.cs-kpi{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border-top:1px solid rgba(247,247,244,.25)}
+.cs-kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:36px;border-top:1px solid rgba(247,247,244,.25)}
 .cs-kpi div{padding:22px 20px 0 0}
 .cs-kpi div+div{padding-left:20px;border-left:1px solid rgba(247,247,244,.25)}
 .cs-kpi b{display:block;font-family:var(--serif);font-size:clamp(34px,3.6vw,52px);line-height:1;font-weight:800;color:var(--accent)}
@@ -719,8 +720,8 @@ footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:
   .svc-grid,.stats{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(2){border-right:0}
   .work{grid-column:span 6}
-  .work.feature{grid-column:span 12;grid-row:auto}
-  .work.feature .fig{height:auto;aspect-ratio:16/9;min-height:0}
+  .work.feature{grid-column:span 6}
+  .work.feature .fig{aspect-ratio:4/3}
   .job{grid-template-columns:160px 1fr;}
   .job ul{grid-column:2}
 }
@@ -744,7 +745,7 @@ footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:
 }
 @media (max-width:640px){
   .container{width:calc(100% - 36px)}
-  .work{grid-column:span 12}
+  .work,.work.feature{grid-column:span 12}
   .svc-grid,.stats{grid-template-columns:1fr}
   .stat{border-right:0;border-bottom:1px solid var(--hair)}
   .svc{border-right:0}
@@ -770,12 +771,13 @@ footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:
 /* ============================================================
    Lightbox 作品放大（Banner／平面／名片）
    ============================================================ */
-.lb{position:fixed;inset:0;z-index:180;background:rgba(21,21,21,.94);color:var(--paper);opacity:0;transition:opacity .3s}
+.lb{--lbw:min(960px,100vw - 176px);position:fixed;inset:0;z-index:180;background:rgba(21,21,21,.94);color:var(--paper);opacity:0;transition:opacity .3s}
 .lb.open{opacity:1}
-.lb-stage{position:absolute;inset:64px 88px 96px;display:grid;place-items:center;overflow:hidden}
+/* 燈箱固定寬度（最寬 960px），圖片依燈箱寬度縮放，太高時再依高度縮小 */
+.lb-stage{position:absolute;top:72px;bottom:104px;left:0;right:0;width:var(--lbw);margin-inline:auto;display:grid;place-items:center;overflow:hidden}
 .lb-stage img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;box-shadow:0 20px 60px rgba(0,0,0,.4);transform:scale(.97);transition:transform .4s var(--ease-out)}
 .lb.open .lb-stage img{transform:none}
-.lb.zoom .lb-stage{inset:0;overflow:auto;display:block}
+.lb.zoom .lb-stage{inset:0;width:auto;margin:0;overflow:auto;display:block}
 .lb.zoom .lb-stage img{max-width:none;max-height:none;cursor:zoom-out;box-shadow:none}
 .lb.zoom .lb-nav,.lb.zoom .lb-cap{opacity:0;pointer-events:none}
 .lb-x{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--paper);border:1px solid rgba(247,247,244,.3);background:rgba(21,21,21,.6);transition:.3s;z-index:2}
@@ -784,15 +786,16 @@ footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:
 .lb-nav:hover{background:var(--accent);border-color:var(--accent)}
 .lb-nav.prev{left:20px}.lb-nav.next{right:20px}
 .lb.single .lb-nav{display:none}
-.lb-cap{position:absolute;left:88px;right:88px;bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;transition:opacity .3s}
+.lb-cap{position:absolute;left:0;right:0;width:var(--lbw);margin-inline:auto;bottom:28px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;transition:opacity .3s}
 .lb-cap b{display:block;font-family:var(--serif-tc);font-size:18px;font-weight:600}
 .lb-cap small{display:block;font-size:13px;color:rgba(247,247,244,.65);margin-top:4px}
 .lb-cap .mono{font-size:12px;color:rgba(247,247,244,.65);white-space:nowrap}
 @media (max-width:760px){
-  .lb-stage{inset:64px 12px 120px}
+  .lb{--lbw:calc(100vw - 32px)}
+  .lb-stage{top:72px;bottom:130px}
   .lb-nav{top:auto;bottom:24px;transform:none;width:44px;height:44px}
   .lb-nav.prev{left:auto;right:68px}.lb-nav.next{right:16px}
-  .lb-cap{left:16px;right:130px;bottom:20px;flex-direction:column;align-items:flex-start;gap:6px}
+  .lb-cap{width:auto;left:16px;right:130px;margin:0;bottom:20px;flex-direction:column;align-items:flex-start;gap:6px}
   .lb-cap b{font-size:16px}
 }
 

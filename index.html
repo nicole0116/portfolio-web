@@ -163,7 +163,7 @@
 
         <div class="cover-cta rv">
           <a href="#works" class="btn btn-dark">翻閱作品 <svg class="ic"><use href="#i-arrow"/></svg></a>
-          <button class="btn btn-line" data-cv><svg class="ic"><use href="#i-download"/></svg>下載履歷</button>
+          <a class="btn btn-line" href="files/NicoleChang-Resume.pdf" download="NicoleChang-Resume.pdf"><svg class="ic"><use href="#i-download"/></svg>下載履歷</a>
           <button class="btn btn-line" data-guide="jd"><svg class="ic"><use href="#i-target"/></svg>貼上職缺，看適不適合</button>
         </div>
       </div>
@@ -190,7 +190,8 @@
       </div>
     </div>
 
-    <div class="stats rv">
+    <!-- 數字介紹：暫時隱藏，有實際數字後拿掉 hidden 即可 -->
+    <div class="stats rv" hidden>
       <div class="stat"><svg class="ic"><use href="#i-clock"/></svg><div class="num" data-count="12">0<sup>+</sup></div><p>年設計實戰經驗</p></div>
       <div class="stat"><svg class="ic"><use href="#i-web"/></svg><div class="num" data-count="120">0<sup>+</sup></div><p>網站與 EDM 上線專案</p></div>
       <div class="stat"><svg class="ic"><use href="#i-banner"/></svg><div class="num" data-count="800">0<sup>+</sup></div><p>廣告與社群 Banner</p></div>
@@ -334,7 +335,7 @@
     <div class="p-head rv">
       <div class="p-num">04</div>
       <h2 class="p-title"><small>Contact · 聯絡合作</small>下一頁，一起寫。</h2>
-      <p class="p-desc">歡迎全職職缺、接案合作或設計交流，通常 1 個工作天內回覆。</p>
+      <p class="p-desc">歡迎全職職缺、接案合作或設計交流，<br>通常 3 個工作天內回覆。</p>
     </div>
     <h3 class="contact-hero rv">有好的內容？<br>讓我把它設計得<em>更好看</em>。</h3>
     <div class="c-grid">
@@ -352,7 +353,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>接案：形象網站、一頁式 EDM</li>
           <li><svg class="ic"><use href="#i-check"/></svg>長期合作：Banner 與社群素材</li>
         </ul>
-        <button class="btn" data-cv><svg class="ic"><use href="#i-download"/></svg>下載完整履歷 PDF</button>
+        <a class="btn" href="files/NicoleChang-Resume.pdf" download="NicoleChang-Resume.pdf"><svg class="ic"><use href="#i-download"/></svg>下載完整履歷 PDF</a>
       </aside>
     </div>
     <a href="#home" class="next rv"><small class="mono">Back to top <svg class="ic"><use href="#i-up"/></svg></small><div class="row"><b>回到首頁</b><span class="circle"><svg class="ic"><use href="#i-home"/></svg></span></div></a>
@@ -404,24 +405,24 @@
    type: web | edm | banner　tone: ink | accent | stone
    有真實作品圖時，加上 img:"images/檔名.jpg" 就會取代示意圖
    ============================================================ */
-/* Banner、平面、名片：點擊直接放大圖片（燈箱），不進內頁 */
-const LB_TYPES = ["banner","print","card"];
+/* Banner、平面、名片、其他創作：點擊直接放大圖片（燈箱），不進內頁 */
+const LB_TYPES = ["banner","print","card","other"];
 const WORKS = [
-  { type:"web", feature:true, tone:"ink", title:"國際資安認證課程形象網站", year:"2025",
+  { type:"web", hidden:true, tone:"ink", title:"國際資安認證課程形象網站", year:"2025",
     client:"恆逸教育訓練中心", role:"視覺設計、切版、動態效果", tools:"Figma、HTML/CSS、JS、SVG",
     bg:"整合九大國際原廠資安認證的課程入口網站。目標族群是企業 IT 主管與資安人員，需要在大量認證資訊中，快速找到適合自己的學習路徑。",
     points:["深色主調搭配單一強調色，建立權威、可信賴的形象","設計認證地圖與篩選器，讓使用者依職能快速找到課程","數字計數與 SVG 徽章動畫，強化專業感"],
     result:[["+48%","課程頁點擊率"],["2.6 分鐘","平均停留時間"]] },
   /* ---- 案例研究：有 cs 欄位就會改用 Case Study 版型 ----
      ○○ 處請換成實際數字；shots 的 src 填入圖片路徑後，虛線提示框就會換成圖片 */
-  { type:"ai", tone:"ink", title:"用 AI 自動化流程，一次修正 3000+ 封 EDM 的資安弱點", year:"2026",
+  { type:"ai", feature:true, tone:"ink", title:"用 AI 自動化流程，一次修正 3000+ 封 EDM 的資安弱點", year:"2026",
     client:"恆逸教育訓練中心", role:"問題分析、流程設計、AI 協作、品質驗證", tools:"AI 程式助理、資安弱點掃描、Git（請依實際工具修改）",
     bg:"EDM 資安弱掃後，需要更新 jQuery、Bootstrap 等程式元件並調整載入設定。我判斷根本原因是「多版本並存」，設計了 AI 批次改寫加人工把關的流程，約 10 天完成 3000+ 封 EDM 的函式庫統一與舊頁面整理（手動預估約 3 個月）。",
     points:["看出真正的問題是多版本並存，不只是版本號太舊","選擇 Bootstrap 4.6.2 + jQuery 3.8.0，兼顧安全與不跑版","AI 負責大量掃描與改寫，我負責規則、驗證與抽樣檢查"],
-    result:[["3000+","封 EDM 完成修正"],["○ → 1","jQuery 版本收斂"]],
+    result:[["3000+","封 EDM 完成修正"],["10 天","實際投入，手動預估約 3 個月"]],
     cs:{
-      lead:"資安掃描報告指出全站有多個過期函式庫。我用 AI 協作，實際投入約 <em>10 天</em>，完成 <em>3000+ 封 EDM</em> 的函式庫統一與舊頁面清理，並把 jQuery 從 ○ 種版本收斂成 1 種。",
-      kpi:[["3000+","封 EDM 完成修正"],["○ → 1","jQuery 版本數"],["10 天","實際投入，手動預估約 3 個月"],["0","複掃後的高風險弱點"]],
+      lead:"資安掃描報告指出全站有多個過期函式庫。我用 AI 協作，實際投入約 <em>10 天</em>，完成 <em>3000+ 封 EDM</em> 的函式庫統一與舊頁面清理，把多種並存的 jQuery、Bootstrap 版本統一成同一組。",
+      kpi:[["3000+","封 EDM 完成修正"],["10 天","實際投入，手動預估約 3 個月"]],
       problem:[
         "這次 EDM 資安弱掃後，公司希望更新 EDM 使用的程式元件，例如 jQuery、Bootstrap，並調整網頁的載入設定，降低已知的資安風險。",
         "盤點後發現，網站裡同時存在多個版本的 jQuery 與 Bootstrap。原因很單純：每期 EDM 都是複製上一期的頁面來改，舊版函式庫就跟著一路沿用下來。",
@@ -437,7 +438,7 @@ const WORKS = [
         {t:"批次改寫",who:"ai",d:"依規則把引用統一換成 Bootstrap 4.6.2 + jQuery 3.8.0，並調整網頁的載入設定。"},
         {t:"自動驗證",who:"ai",d:"確認沒有頁面再引用舊版本，並比對修改前後的差異。"},
         {t:"抽樣檢查",who:"me",d:"依年份與版型抽樣，在瀏覽器實際打開檢查是否跑版、互動是否正常。"}],
-      results:[["3000+","封 EDM 完成修正"],["○ → 1","jQuery 版本數"],["○ → 1","Bootstrap 版本數"],["10 天 vs 3 個月","實際投入 vs 手動預估（不含企劃審核期）"],["○○ 封","抽樣檢查，0 跑版"],["0","複掃高風險弱點"]],
+      results:[["3000+","封 EDM 完成修正"],["1 組","統一的 jQuery＋Bootstrap 版本"],["10 天 vs 3 個月","實際投入 vs 手動預估（不含企劃審核期）"]],
       prevent:[
         {i:"i-link",t:"共用函式庫路徑",d:"所有 EDM 改為引用同一個共用路徑，以後升級只要改一個地方。"},
         {i:"i-layout",t:"標準 EDM 範本",d:"新的 EDM 從標準範本開始做，不再複製舊頁面，從源頭避免舊版本被帶進來。"},
@@ -451,7 +452,7 @@ const WORKS = [
                 {src:"",cap:"抽樣檢查畫面",tip:"同一封 EDM 修改前後的畫面並排，證明沒有跑版"}]
       }
     } },
-  { type:"web", tone:"ink", title:"EC-Council 認證職涯地圖互動網頁", year:"2025",
+  { type:"web", feature:true, tone:"ink", title:"EC-Council 認證職涯地圖互動網頁", year:"2025",
     shots:{desktop:"images/ec-council-roadmap-desktop.jpg", mobile:"images/ec-council-roadmap-mobile.jpg"},
     demo:{dir:"images/ec-council-steps/step-", alt:"EC-Council 認證職涯地圖篩選畫面",
       steps:[["預設狀態","五個階段、30 多張認證全部列出，讀者先看到完整的認證版圖。"],
@@ -486,7 +487,7 @@ const WORKS = [
     bg:"AI 辦公室生產力系列課程的一頁式 EDM。讀者是每天被報表、會議、簡報追著跑的上班族，頁面以「技能圖鑑」為主題，引導讀者依職能找到真正用得上的 AI 工作術。",
     points:["主標用提問切入：「你的工作，還能怎麼用 AI 升級？」，搭配技能圖鑑插圖與 Lv UP 徽章","Step 1 選擇職能：數據財會、行政專案、行銷設計三張角色卡片，點選後顯示對應痛點與核心工具","Step 2 分級課表：依 Lv.1～Lv.3 分級呈現課程，讀者能看出自己該從哪一階開始","Step 3 實戰場景：以 Excel 數據清理、PowerPoint Copilot 等實際操作畫面說明學完能做什麼","藍色手帳與方格紙風格，降低 AI 課程的距離感；手機版改為單欄，報名表單完整保留"],
     result:[["3 種","職能路徑"],["2 版","電腦／手機 RWD"]] },
-  { type:"edm", tone:"ink", title:"AI × Excel 五階段課程 EDM", year:"2026",
+  { hidden:true, type:"edm", tone:"ink", title:"AI × Excel 五階段課程 EDM", year:"2026",
     client:"恆逸教育訓練中心", role:"文案修飾、視覺設計、切版", tools:"Figma、HTML/CSS、SVG",
     bg:"從 Excel 基礎到 VBA 自動化的五階段 AI 課程，要讓上班族一眼看懂「我該從哪一階開始」。",
     points:["活潑插圖降低學習門檻","五階段以階梯式動態路徑呈現學習進程","每個階段搭配「學完你可以⋯」的成果描述"],
@@ -496,12 +497,12 @@ const WORKS = [
     bg:"年終促銷檔期的廣告素材，主打輕鬆、溫暖的進修氛圍，吸引一般上班族。",
     points:["大字標題搭配留白，在動態牆上快速被看見","用 AI 生成素材加速製作，再手工精修","另製作動態版本供 IG Reels 使用"],
     result:[["2.3%","廣告點擊率"],["-35%","單次點擊成本"]] },
-  { type:"web", tone:"ink", title:"Claude Code 開發者學習路徑網站", year:"2026",
+  { hidden:true, type:"web", tone:"ink", title:"Claude Code 開發者學習路徑網站", year:"2026",
     client:"恆逸教育訓練中心", role:"概念設計、切版、動態效果", tools:"Figma、HTML/CSS、JS",
     bg:"為開發者與企業規劃的三階段 AI 程式開發學習路徑介紹頁，風格貼近開發者熟悉的終端機介面。",
     points:["終端機與 git diff 視覺隱喻，貼近工程師語境","打字機動畫呈現指令操作過程","三階段路徑以時間軸卡片清楚區分對象"],
     result:[["+55%","頁面分享數"],["3 階段","學習路徑"]] },
-  { type:"edm", tone:"stone", title:"企業包班方案電子報", year:"2024",
+  { hidden:true, type:"edm", tone:"stone", title:"企業包班方案電子報", year:"2024",
     client:"恆逸教育訓練中心", role:"版型設計、切版", tools:"Figma、HTML Email",
     bg:"寄送給企業 HR 與主管的包班方案電子報，需要在 Outlook、Gmail 等各大郵件軟體正常顯示。",
     points:["表格式切版，確保 Outlook 正常顯示","以客戶案例與數據建立信任","單一明確的 CTA，引導預約諮詢"],
@@ -526,6 +527,12 @@ const WORKS = [
     bg:"刊登於科技媒體的 AWS 雲端課程限時優惠廣告。優惠規則是「基礎＋進階」課程自由搭配，同時要列出近兩個月的開班課程與日期，資訊量大，必須讓讀者快速看懂怎麼報名最划算。",
     points:["以刀叉與餐盤為主視覺，呼應「基礎＋進階 任你自由配」的點餐概念，把課程組合變成一份套餐","墨綠與橘紅斜切的背景分別對應「基礎」與「進階」兩類課程，顏色貫穿標籤與課程清單","左上角「1+1=?」紅色圓章製造好奇心，引導讀者往下看優惠內容","兩種優惠以「好康 1、好康 2」並排卡片呈現，組合方式用色塊公式表示，一眼看懂差異","課程清單依基礎／進階分欄，課程名稱與開班日期用不同字重區分，方便快速查找"],
     result:[["2 種","優惠組合"],["9 門","課程開班資訊"]] },
+  { hidden:true, type:"card", tone:"accent", title:"蔬食餐廳名片設計", year:"2023", img:"images/card-vegetarian-restaurants.jpg",
+    client:"起緣蔬食、蓮荷蔬食", role:"名片設計（電話、地址與 QR Code 為示意資料）", tools:"Illustrator" },
+  { type:"card", tone:"ink", title:"旭呈資訊 企業名片設計", year:"2023", img:"images/card-it-company.jpg",
+    client:"旭呈資訊", role:"名片設計（姓名與聯絡資訊已做隱私處理）", tools:"Illustrator" },
+  { type:"other", tone:"accent", title:"LINE 官方帳號圖文選單設計", year:"2023", img:"images/line-richmenu.jpg",
+    client:"餐飲品牌", role:"圖文選單設計、圖示繪製", tools:"Illustrator" },
   { type:"card", tone:"ink", title:"個人品牌名片設計", year:"2026", name:"Nicole Chang", job:"Web Designer", mark:"N",
     client:"個人品牌", role:"品牌識別、名片設計", tools:"Illustrator、Photoshop",
     bg:"為自己設計的個人名片，要和作品集網站維持一致的視覺語言，讓對方拿到名片時就能聯想到網站。",
@@ -541,22 +548,22 @@ const WORKS = [
     bg:"為獨立咖啡店設計名片與集點卡，希望在小小的卡片上傳達溫暖、手作的品牌個性。",
     points:["以品牌主色搭配手繪線條插圖","集點卡兼具名片功能，背面印上店家資訊","選用再生紙，呼應品牌的環保理念"],
     result:[["2 款","卡片設計"],["+30%","回訪集點率"]] },
-  { type:"other", kind:"sticker", tone:"accent", title:"原創 LINE 貼圖：○○日常", year:"2025",
+  { hidden:true, type:"other", kind:"sticker", tone:"accent", title:"原創 LINE 貼圖：○○日常", year:"2025",
     client:"個人創作", role:"角色設計、插畫、上架", tools:"Procreate、Illustrator",
     bg:"下班後的個人創作。以自己養的貓為原型設計角色，畫成一組 24 張日常用語貼圖，並完成 LINE 貼圖小舖上架。",
     points:["角色造型簡化成好辨識的幾何形狀，縮小也看得清楚","每張貼圖控制在一個情緒、一句話，聊天時一眼就懂","從草稿、上色到符合平台規格的輸出，全程獨立完成"],
     result:[["24 張","貼圖一組"],["○○ 次","累計下載（請填入）"]] },
-  { type:"other", kind:"type", tone:"ink", title:"中文字體排版練習", year:"2024",
+  { hidden:true, type:"other", kind:"type", tone:"ink", title:"中文字體排版練習", year:"2024",
     client:"個人創作", role:"字體設計、版面編排", tools:"Illustrator、InDesign",
     bg:"每週一張的排版練習，挑一句喜歡的句子，嘗試不同的字體搭配與版面結構，累積對中文排版的手感。",
     points:["練習中英文混排的字重與基線對齊","用大量留白和網格，嘗試雜誌式的版面節奏","部分練習延伸成作品集網站的標題設計"],
     result:[["52 張","一年練習量"],["3 種","延伸應用到正式作品"]] },
-  { type:"other", kind:"photo", tone:"stone", title:"旅行攝影與 Vlog 封面", year:"2026",
+  { hidden:true, type:"other", kind:"photo", tone:"stone", title:"旅行攝影與 Vlog 封面", year:"2026",
     client:"個人創作", role:"攝影、剪輯、封面設計", tools:"DJI Osmo Action、Lightroom、Premiere",
     bg:"旅行時拍攝的照片與短片，並為每支影片設計統一風格的封面，練習用影像說故事。",
     points:["統一的調色風格，讓一系列照片看起來是同一本相簿","封面標題固定在相同位置，形成可辨識的系列感","從拍攝、剪輯到封面設計一手包辦"],
     result:[["○○ 支","Vlog 作品（請填入）"],["1 套","封面版型系統"]] }
-].filter(w=>!(LB_TYPES.includes(w.type)&&!w.img)); /* 燈箱類作品沒有實際圖片（img）就先不顯示，補上圖片即會出現 */
+].filter(w=>!w.hidden&&!(LB_TYPES.includes(w.type)&&!w.img)); /* hidden:true 的作品不顯示；燈箱類作品沒有實際圖片（img）也先不顯示，補上圖片即會出現 */
 const CAT = { web:["網站設計","i-web"], edm:["一頁式 EDM","i-edm"], banner:["Banner 設計","i-banner"], print:["平面設計","i-print"], card:["名片設計","i-card"], ai:["AI 流程優化","i-flow"], other:["其他創作","i-sparkle"] };
 const TONE = { ink:["#151515","#f7f7f4"], accent:["#c8462c","#f7f7f4"], stone:["#d6d6d2","#151515"] };
 const PAGES = ["home","about","works","experience","contact"];
@@ -772,9 +779,9 @@ document.addEventListener("click",e=>{
 })();
 
 /* ===== skills ===== */
-const SKILLS={ "Design":[["Figma",5],["Photoshop",5],["Illustrator",5],["After Effects",3]],
-  "Front-end":[["HTML5 / CSS3 / SCSS",5],["JavaScript",3],["RWD 響應式切版",5],["SVG 動畫",4]],
-  "Tools & AI":[["Mailchimp / HTML Email",4],["GA4 成效追蹤",3],["Claude / ChatGPT",4],["Midjourney",3]] };
+const SKILLS={ "Design":[["Figma",2],["Photoshop",5],["Illustrator",5]],
+  "Front-end":[["HTML5 / CSS3",5],["JavaScript / jQuery",3],["RWD 響應式切版",5]],
+  "Tools & AI":[["HTML Email",4],["Claude / ChatGPT",4]]] };
 const SK_IC={ "Design":"i-pen","Front-end":"i-code","Tools & AI":"i-sparkle" };
 document.getElementById("skills").innerHTML=Object.entries(SKILLS).map(([k,arr])=>
   `<div class="skill-cat mono">${ic(SK_IC[k],"width:16px;height:16px;color:var(--accent)")}${k}</div>`+
@@ -951,7 +958,6 @@ function say(m){toast.innerHTML=ic("i-check","width:16px;height:16px;color:var(-
 document.addEventListener("click",async e=>{
   const c=e.target.closest("[data-copy]");
   if(c){try{await navigator.clipboard.writeText(c.dataset.copy);say("已複製："+c.dataset.copy)}catch(_){say(c.dataset.copy)}}
-  if(e.target.closest("[data-cv]"))say("請替換成你的履歷 PDF 連結");
 });
 
 
@@ -1019,10 +1025,10 @@ const INTENTS=[
   a:"Nicole 在 2020 年完成<b>資策會前端網頁設計與開發養成班</b>，會 HTML、CSS、JavaScript 和 RWD。<br><br>這代表她做的設計稿不只好看，而且做得出來；必要時她也能自己切版上線，省下和工程師來回溝通的時間。",
   acts:[GO("看技能清單","experience")]},
  {keys:["技能","工具","軟體","figma","photoshop","illustrator","ps","ai軟體","會什麼","會用"],
-  a:"主要工具：<ul><li>設計：Figma、Photoshop、Illustrator、After Effects</li><li>前端：HTML、CSS、JavaScript、SVG 動畫</li><li>其他：Mailchimp、GA4、Claude、Midjourney</li></ul>",
+  a:"主要工具：<ul><li>設計：Figma、Photoshop、Illustrator</li><li>前端：HTML、CSS、JavaScript、jQuery</li><li>AI：Claude、ChatGPT</li></ul>",
   acts:[GO("看技能熟練度","experience")]},
  {keys:["ai","人工智慧","生成","claude","chatgpt","midjourney","gpt"],
-  a:"Nicole 會把 AI 工具用在工作流程裡：用 Claude 整理文案架構、加快切版，用 Midjourney 產生素材再手工精修。她的原則是 AI 負責加速，品質和判斷還是由設計師把關。"},
+  a:"Nicole 會把 AI 工具用在工作流程裡：用 Claude、ChatGPT 整理文案架構、加快切版。她的原則是 AI 負責加速，品質和判斷還是由設計師把關。"},
  {keys:["為什麼","優勢","強項","特色","適合","錄取","選她","競爭力","差異"],
   a:"三個理由：<ul><li><b>看得懂複雜內容</b>：長期處理資安、AI 這類專業主題，擅長把資訊整理清楚</li><li><b>設計做得出來</b>：有前端底子，可以直接切版</li><li><b>重視成效</b>：會用數據檢視設計，例如報名轉換率、點擊率</li></ul>",
   acts:[GO("看成效最好的作品","work-1")]},
@@ -1030,7 +1036,7 @@ const INTENTS=[
   a:"合作分四步：<b>需求訪談 → 架構與線稿 → 視覺設計 → 切版上線</b>。一頁式 EDM 通常 1～2 週可以完成，實際時間依內容量而定。",
   acts:[GO("看設計流程","about")]},
  {keys:["全職","接案","兼職","到職","遠端","上班","面試","找工作","開放"],
-  a:"Nicole 目前開放<b>全職職缺</b>和<b>接案合作</b>，地點在台北，也可以遠端。歡迎直接聯絡她，通常 1 個工作天內回覆。",
+  a:"Nicole 目前開放<b>全職職缺</b>和<b>接案合作</b>，地點在台北，也可以遠端。歡迎直接聯絡她，通常 3 個工作天內回覆。",
   acts:[GO("聯絡方式","contact"),{label:"複製 Email",copy:EMAIL}]},
  {keys:["薪水","薪資","待遇","報價","價格","多少錢","費用"],
   a:"薪資和報價會依職位內容或專案範圍而不同，建議直接寫信給 Nicole 討論。",
@@ -1055,14 +1061,14 @@ const JD_RULES=[
  {k:["figma","xd","sketch"],t:"Figma 設計稿與元件"},
  {k:["photoshop","illustrator","adobe","ps","ai檔"],t:"Adobe Photoshop／Illustrator"},
  {k:["ui","ux","使用者體驗","介面","wireframe","prototype"],t:"UI 規劃與資訊架構"},
- {k:["動畫","動態","motion","after effects","互動","svg"],t:"動態效果與 SVG 互動"},
+ {k:["動畫","動態","motion","互動","svg"],t:"動態效果與互動（搭配 AI 製作）"},
  {k:["品牌","視覺規範","設計規範","design system","識別"],t:"品牌視覺與設計規範建立"},
  {k:["ai","生成式","chatgpt","midjourney","claude","自動化"],t:"AI 工具導入工作流程（批次修正 3000+ 封 EDM）",f:"ai"},
  {k:["b2b","教育","課程","培訓","科技","資安"],t:"B2B／教育訓練／科技產業經驗"},
  {k:["電商","商品頁","購物"],t:"電商視覺經驗（3 年）"},
  {k:["溝通","跨部門","提案","簡報","協作"],t:"跨部門溝通與提案"},
  {k:["wordpress","cms"],t:"WordPress 基本操作"},
- {k:["ga","google analytics","數據","成效","轉換率","a/b"],t:"以數據檢視設計成效"},
+ {k:["數據","成效","轉換率","關鍵字廣告","facebook 廣告"],t:"廣告成效追蹤（關鍵字、Facebook 廣告）"},
  {k:["名片","印刷品","cis","識別系統"],t:"名片與印刷品設計",f:"card"},
  {k:["插畫","繪圖","illustration","角色","貼圖","手繪"],t:"插畫與角色設計（原創貼圖）",f:"other"},
  {k:["攝影","影片","剪輯","短影音","reels","premiere"],t:"攝影與影片剪輯",f:"other"},
