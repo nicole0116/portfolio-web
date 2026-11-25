@@ -779,7 +779,7 @@ document.addEventListener("click",e=>{
 })();
 
 /* ===== skills ===== */
-const SKILLS={ "Design":[["Figma",2],["Photoshop",5],["Illustrator",5]],
+const SKILLS={ "Design":[["Photoshop",5],["Illustrator",5]],
   "Front-end":[["HTML5 / CSS3",5],["JavaScript / jQuery",3],["RWD 響應式切版",5]],
   "Tools & AI":[["HTML Email",4],["Claude / ChatGPT",4]]] };
 const SK_IC={ "Design":"i-pen","Front-end":"i-code","Tools & AI":"i-sparkle" };
@@ -1025,7 +1025,7 @@ const INTENTS=[
   a:"Nicole 在 2020 年完成<b>資策會前端網頁設計與開發養成班</b>，會 HTML、CSS、JavaScript 和 RWD。<br><br>這代表她做的設計稿不只好看，而且做得出來；必要時她也能自己切版上線，省下和工程師來回溝通的時間。",
   acts:[GO("看技能清單","experience")]},
  {keys:["技能","工具","軟體","figma","photoshop","illustrator","ps","ai軟體","會什麼","會用"],
-  a:"主要工具：<ul><li>設計：Figma、Photoshop、Illustrator</li><li>前端：HTML、CSS、JavaScript、jQuery</li><li>AI：Claude、ChatGPT</li></ul>",
+  a:"主要工具：<ul><li>設計：Photoshop、Illustrator</li><li>前端：HTML、CSS、JavaScript、jQuery</li><li>AI：Claude、ChatGPT</li></ul>",
   acts:[GO("看技能熟練度","experience")]},
  {keys:["ai","人工智慧","生成","claude","chatgpt","midjourney","gpt"],
   a:"Nicole 會把 AI 工具用在工作流程裡：用 Claude、ChatGPT 整理文案架構、加快切版。她的原則是 AI 負責加速，品質和判斷還是由設計師把關。"},
@@ -1058,7 +1058,6 @@ const JD_RULES=[
  {k:["banner","廣告素材","社群","視覺素材","fb","ig","gdn"],t:"Banner 與社群素材設計",f:"banner"},
  {k:["平面","dm","海報","傳單","印刷","文宣","型錄"],t:"平面印刷品設計（DM／傳單）",f:"print"},
  {k:["html","css","切版","前端","javascript","rwd","響應式","jquery"],t:"HTML／CSS／JS 前端切版（資策會培訓）"},
- {k:["figma","xd","sketch"],t:"Figma 設計稿與元件"},
  {k:["photoshop","illustrator","adobe","ps","ai檔"],t:"Adobe Photoshop／Illustrator"},
  {k:["ui","ux","使用者體驗","介面","wireframe","prototype"],t:"UI 規劃與資訊架構"},
  {k:["動畫","動態","motion","互動","svg"],t:"動態效果與互動（搭配 AI 製作）"},
