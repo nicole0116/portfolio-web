@@ -781,7 +781,7 @@ document.addEventListener("click",e=>{
 /* ===== skills ===== */
 const SKILLS={ "Design":[["Photoshop",5],["Illustrator",5]],
   "Front-end":[["HTML5 / CSS3",5],["JavaScript / jQuery",3],["RWD 響應式切版",5]],
-  "Tools & AI":[["HTML Email",4],["Claude / ChatGPT",4]]] };
+  "Tools & AI":[["HTML Email",4],["Claude / ChatGPT",4]] };
 const SK_IC={ "Design":"i-pen","Front-end":"i-code","Tools & AI":"i-sparkle" };
 document.getElementById("skills").innerHTML=Object.entries(SKILLS).map(([k,arr])=>
   `<div class="skill-cat mono">${ic(SK_IC[k],"width:16px;height:16px;color:var(--accent)")}${k}</div>`+
