@@ -70,7 +70,7 @@
 <header class="mast">
   <div class="container">
     <div class="mast-top mono">
-      <span class="status"><i></i>Open to work · 開放全職／接案</span>
+      <span class="status"><i></i>Open to work · 開放接案</span>
       <span class="hide-m">The Portfolio Issue — Vol.12 / 2026</span>
       <span class="kbd-hint hide-m"><kbd>←</kbd><kbd>→</kbd> 翻頁</span>
     </div>
@@ -109,7 +109,7 @@
 
     <div class="hm-title hc-main">
       <div>
-        <p class="hc-eye rv">網頁設計師 ／ Web &amp; Visual Designer</p>
+        <p class="hc-eye rv">網頁設計師暨視覺設計師 ／ Web &amp; Visual Designer</p>
         <h1 class="hc-name" aria-label="Nicole Chang"><span class="w"><span class="ch">N</span><span class="ch">i</span><span class="ch">c</span><span class="ch">o</span><span class="ch">l</span><span class="ch">e</span></span><span class="w"><em class="ch">Chang</em></span></h1>
       </div>
       <div class="hc-side">
@@ -542,6 +542,12 @@ const WORKS = [
     bg:"AI 辦公室生產力系列課程的一頁式 EDM。讀者是每天被報表、會議、簡報追著跑的上班族，頁面以「技能圖鑑」為主題，引導讀者依職能找到真正用得上的 AI 工作術。",
     points:["主標用提問切入：「你的工作，還能怎麼用 AI 升級？」，搭配技能圖鑑插圖與 Lv UP 徽章","Step 1 選擇職能：數據財會、行政專案、行銷設計三張角色卡片，點選後顯示對應痛點與核心工具","Step 2 分級課表：依 Lv.1～Lv.3 分級呈現課程，讀者能看出自己該從哪一階開始","Step 3 實戰場景：以 Excel 數據清理、PowerPoint Copilot 等實際操作畫面說明學完能做什麼","藍色手帳與方格紙風格，降低 AI 課程的距離感；手機版改為單欄，報名表單完整保留"],
     result:[["3 種","職能路徑"],["2 版","電腦／手機 RWD"]] },
+  { type:"edm", tone:"accent", title:"Figma 專業 UI 設計實作課程 EDM", year:"2025",
+    shots:{desktop:"images/figma-ui-desktop.jpg", mobile:"images/figma-ui-mobile.jpg"},
+    client:"恆逸教育訓練中心", role:"文案架構、視覺設計、插圖編排、切版", tools:"Illustrator、Photoshop、HTML、CSS",
+    bg:"Figma 專業 UI 設計實作課程的一頁式 EDM。讀者是想入門 UI 設計的新手、視覺設計師、網頁設計師、程式設計師與網站／APP 企劃，頁面要說清楚「為什麼選 Figma」、不同角色怎麼用 Figma，以及課程能學到什麼。",
+    points:["主標以「想學 UI 設計？！從業界首選的 Figma 開始」提問切入，搭配游標、色票、貝茲曲線等設計工具圖示，一看就知道是 UI 課程","以粗黑外框、亮色塊與手繪插圖的普普風格，降低設計軟體課程的距離感","「為什麼選 Figma」整理市占率與 AI 新功能三大重點，「適合對象」以五張角色標籤讓讀者快速對號入座","四格漫畫說明 UI/UX 設計師、PM 與客戶如何透過 Figma 協作，再以角色案例搭配操作截圖與示範影片，說明各自解決的問題","課程規劃以「6 大章節、23+ 個單元、21 小時」三組大數字開場，各章節用編號卡片搭配截圖與影片展開","學員心得與「其他相關文章」、索取課程資訊表單放在頁尾，讀完後直接行動；手機版改為單欄，依閱讀順序重新排列"],
+    result:[["23+","課程單元圖卡化"],["2 版","電腦／手機 RWD"]] },
   { hidden:true, type:"edm", tone:"ink", title:"AI × Excel 五階段課程 EDM", year:"2026",
     client:"恆逸教育訓練中心", role:"文案修飾、視覺設計、切版", tools:"Figma、HTML/CSS、SVG",
     bg:"從 Excel 基礎到 VBA 自動化的五階段 AI 課程，要讓上班族一眼看懂「我該從哪一階開始」。",
@@ -677,6 +683,9 @@ function mockup(w){
 }
 
 /* ===== works list ===== */
+let curFilter="all";
+/* 作品編號：依目前篩選結果排序，與列表上看到的號碼一致 */
+const workNo=i=>{const t=WORKS[i].type;return curFilter==="all"||curFilter!==t?i+1:WORKS.slice(0,i+1).filter(w=>w.type===t).length};
 const grid=document.getElementById("worksGrid");
 grid.innerHTML=WORKS.map((w,i)=>`
   <a class="work rv ${w.feature?"feature":""}" href="${LB_TYPES.includes(w.type)?w.img:"#work-"+(i+1)}" ${LB_TYPES.includes(w.type)?`data-lb="${i}" data-cursor="放大看"`:"data-cursor"} data-type="${w.type}">
@@ -689,6 +698,7 @@ document.querySelectorAll("#filters button").forEach(b=>{
   b.querySelector("sup").textContent=cnt;
   if(!cnt){b.hidden=true;document.querySelectorAll(`[data-filter="${f}"]`).forEach(a=>a.closest("li").hidden=true);}
   b.onclick=()=>{
+    curFilter=f;
     document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("on",x===b));
     [...grid.children].forEach((el,i)=>{
       const show=f==="all"||el.dataset.type===f;
@@ -740,7 +750,7 @@ function renderDetail(i){
   const p=WORKS[a], n=WORKS[b], pi=a+1, ni=b+1;
   document.getElementById("detail").innerHTML=`
     <a href="#works" class="back rv">${ic("i-arrow-l")}返回作品列表</a>
-    <div class="d-head rv"><div><div class="k mono">${ic(CAT[w.type][1])}${CAT[w.type][0]} · ${w.year}</div><h1>${w.title}</h1></div><div class="big">${pad(i+1)}</div></div>
+    <div class="d-head rv"><div><div class="k mono">${ic(CAT[w.type][1])}${CAT[w.type][0]} · ${w.year}</div><h1>${w.title}</h1></div><div class="big">${pad(workNo(i))}</div></div>
     <div class="d-meta rv">
       <div>${ic("i-people")}<span><small class="mono">Client</small><b>${w.client}</b></span></div>
       <div>${ic("i-user")}<span><small class="mono">Role</small><b>${w.role}</b></span></div>
@@ -908,7 +918,7 @@ function route(first,name){
   target=r.key;
   document.getElementById("nav").classList.remove("open");
   if(first||reduce){show(r);target=null;return}
-  const label=r.page==="work"?`No.${pad(r.idx+1)}`:r.page==="home"?"Portfolio.":`${pad(PAGES.indexOf(r.page))} — ${PAGE_NAME[r.page]}`;
+  const label=r.page==="work"?`No.${pad(workNo(r.idx))}`:r.page==="home"?"Portfolio.":`${pad(PAGES.indexOf(r.page))} — ${PAGE_NAME[r.page]}`;
   cLabel.textContent=label;
   curtain.classList.remove("go");cLabel.classList.remove("go");void curtain.offsetWidth;
   curtain.classList.add("go");cLabel.classList.add("go");
