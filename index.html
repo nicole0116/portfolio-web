@@ -419,8 +419,10 @@
    有真實作品圖時，加上 img:"images/檔名.jpg" 就會取代示意圖
    ============================================================ */
 /* Banner、平面、名片、其他創作：點擊直接放大圖片（燈箱），不進內頁 */
-const LB_TYPES = ["banner","print","card","other"];
-/* 燈箱類作品若有 sets（多尺寸系列），改為進入詳細頁，展示所有尺寸 */
+/* 圖片類作品：沒有實際圖片（img）或多尺寸系列（sets）時先不顯示 */
+const IMG_TYPES = ["banner","print","card","other"];
+/* 只有名片點了直接開燈箱；Banner、平面設計、其他創作都進詳細頁，才看得到專案說明 */
+const LB_TYPES = ["card"];
 const isLB = w => LB_TYPES.includes(w.type) && !w.sets;
 const WORKS = [
   { type:"web", hidden:true, tone:"ink", title:"國際資安認證課程形象網站", year:"2025",
@@ -613,7 +615,15 @@ const WORKS = [
   { type:"card", tone:"ink", title:"旭呈資訊 企業名片設計", year:"2023", img:"images/card-it-company.jpg",
     client:"旭呈資訊", role:"名片設計（姓名與聯絡資訊已做隱私處理）", tools:"Illustrator" },
   { type:"other", tone:"accent", title:"LINE 官方帳號圖文選單設計", year:"2023", img:"images/line-richmenu.jpg",
-    client:"餐飲品牌", role:"圖文選單設計、圖示繪製", tools:"Illustrator" },
+    client:"餐飲品牌", role:"圖文選單設計、圖示繪製", tools:"Illustrator",
+    bg:"餐飲品牌 LINE 官方帳號的圖文選單，固定顯示在聊天室下方。顧客最常做的三件事是點餐、看優惠和查詢訂單，選單要讓人一眼找到入口，並延續品牌溫暖、懷舊的風格。",
+    points:["選單只放「點餐、優惠、查詢」三個最常用的功能，等寬三欄排列，手指點選範圍夠大","每個功能都搭配自繪線條圖示：手指點手機、手托優惠章、放大鏡查文件，不看文字也能辨識","米黃底色搭配咖啡色線條、虛線邊框與豆子圖案，呈現餐飲品牌的溫暖手作感","圖示與文字使用同一個咖啡色，只在重點處點綴橘黃色，維持畫面乾淨"],
+    result:[["3 個","主要功能入口"],["1 套","自繪圖示"]] },
+  { type:"other", tone:"accent", title:"口袋行動電源 包裝設計", year:"2025", img:"images/powerbank-packaging.jpg",
+    client:"自由接案", role:"包裝設計、展開圖排版、多語系規格編排", tools:"Illustrator、Photoshop",
+    bg:"Monday X Blue 4900mAh 口袋行動電源的彩盒包裝，規格表需同時列出 USB-C 與 Lightning 共三種型號，銷售對象包含日本與台灣市場。要在小小的盒面上放進中、日、英三語的規格、內容物與法規標示，同時讓商品在貨架上一眼被看見。",
+    points:["正面以大面積商品去背圖搭配「Lightweight Pocket Power Bank」標題，4900mAh 容量與 USB-C 型號用圓形標籤獨立強調","盒身上半部米白、下半部珊瑚橘斜切分色，讓品牌 Logo 與商品名稱分屬不同區塊，視覺層次清楚","側面依「包裝內容物」整理中、日、英三語，背面規格表以兩欄對照排列，方便不同市場的消費者查找","Features 區塊用三句短文案說明支架、內建充電線與輕巧好攜帶三大賣點","條碼、產品型號、認證標章與製造商資訊集中在側面與底部，符合上架與檢驗需求","依實際盒型繪製展開圖，標出裁切線、摺線與插舌位置，可直接交付印刷"],
+    result:[["3 語","中・日・英規格資訊"],["3 款","型號規格整合"]] },
   { type:"card", tone:"ink", title:"個人品牌名片設計", year:"2026", name:"Nicole Chang", job:"Web Designer", mark:"N",
     client:"個人品牌", role:"品牌識別、名片設計", tools:"Illustrator、Photoshop",
     bg:"為自己設計的個人名片，要和作品集網站維持一致的視覺語言，讓對方拿到名片時就能聯想到網站。",
@@ -644,7 +654,7 @@ const WORKS = [
     bg:"旅行時拍攝的照片與短片，並為每支影片設計統一風格的封面，練習用影像說故事。",
     points:["統一的調色風格，讓一系列照片看起來是同一本相簿","封面標題固定在相同位置，形成可辨識的系列感","從拍攝、剪輯到封面設計一手包辦"],
     result:[["○○ 支","Vlog 作品（請填入）"],["1 套","封面版型系統"]] }
-].filter(w=>!w.hidden&&!(LB_TYPES.includes(w.type)&&!w.img&&!w.sets)); /* hidden:true 的作品不顯示；燈箱類作品沒有實際圖片（img）也先不顯示，補上圖片即會出現 */
+].filter(w=>!w.hidden&&!(IMG_TYPES.includes(w.type)&&!w.img&&!w.sets)); /* hidden:true 的作品不顯示；燈箱類作品沒有實際圖片（img）也先不顯示，補上圖片即會出現 */
 const CAT = { web:["網站設計","i-web"], edm:["一頁式 EDM","i-edm"], banner:["Banner 設計","i-banner"], print:["平面設計","i-print"], card:["名片設計","i-card"], ai:["AI 流程優化","i-flow"], other:["其他創作","i-sparkle"] };
 const TONE = { ink:["#151515","#f7f7f4"], accent:["#c8462c","#f7f7f4"], stone:["#d6d6d2","#151515"] };
 const PAGES = ["home","about","works","experience","contact"];
@@ -710,8 +720,8 @@ let curFilter="all";
 const workNo=i=>{const t=WORKS[i].type;return curFilter==="all"||curFilter!==t?i+1:WORKS.slice(0,i+1).filter(w=>w.type===t).length};
 const grid=document.getElementById("worksGrid");
 grid.innerHTML=WORKS.map((w,i)=>`
-  <a class="work rv ${w.feature?"feature":""}" href="${isLB(w)?w.img:"#work-"+(i+1)}" ${isLB(w)?`data-lb="${i}" data-cursor="放大看"`:"data-cursor"} data-type="${w.type}">
-    <div class="fig">${mockup(w)}</div>
+  <a class="work rv ${w.feature?"feature":""}" href="${isLB(w)?w.img:"#work-"+(i+1)}" ${isLB(w)?`data-lb="${i}" data-cursor="放大看"`:`data-cursor="${w.sets?"看全部尺寸":""}"`} data-type="${w.type}">
+    <div class="fig">${mockup(w)}${w.sets?`<span class="fig-badge mono">${w.sets.reduce((n,s)=>n+s.files.length,0)} 種尺寸</span>`:""}</div>
     <div class="meta"><span class="no">${pad(i+1)}</span><div><h3>${w.title}</h3><div class="cat">${ic(CAT[w.type][1])}${CAT[w.type][0]}</div></div><span class="yr">${w.year}</span></div>
   </a>`).join("");
 document.querySelectorAll("#filters button").forEach(b=>{
@@ -779,11 +789,11 @@ function renderDetail(i){
       <div>${ic("i-tool")}<span><small class="mono">Tools</small><b>${w.tools}</b></span></div>
       <div>${ic("i-clock")}<span><small class="mono">Year</small><b>${w.year}</b></span></div>
     </div>
-    ${w.cs?caseHTML(w):`${w.shots?shotsHTML(w):w.sets?setsHTML(w):`<div class="d-fig rv ${w.img?"is-img":""}">${mockup(w)}</div>`}
+    ${w.cs?caseHTML(w):`${w.shots?shotsHTML(w):w.sets?setsHTML(w):w.img?`<button type="button" class="d-fig rv is-img" data-zoom="${i}" data-cursor="放大看" aria-label="放大檢視：${w.title}">${mockup(w)}</button>`:`<div class="d-fig rv">${mockup(w)}</div>`}
     <div class="d-body">
-      <section class="rv"><h4><span>01</span>專案背景</h4><p>${w.bg}</p></section>
-      <section class="rv"><h4><span>02</span>設計策略</h4><ul>${w.points.map(x=>`<li>${x}</li>`).join("")}</ul></section>
-      <section class="rv"><h4><span>03</span>成果</h4><div class="res">${w.result.map(r=>`<div><b>${r[0]}</b><small>${r[1]}</small></div>`).join("")}</div></section>
+      ${w.bg?`<section class="rv"><h4><span>01</span>專案背景</h4><p>${w.bg}</p></section>`:""}
+      ${w.points?`<section class="rv"><h4><span>02</span>設計策略</h4><ul>${w.points.map(x=>`<li>${x}</li>`).join("")}</ul></section>`:""}
+      ${w.result?`<section class="rv"><h4><span>03</span>成果</h4><div class="res">${w.result.map(r=>`<div><b>${r[0]}</b><small>${r[1]}</small></div>`).join("")}</div></section>`:""}
     </div>`}
     <nav class="d-nav rv">
       <a href="#work-${pi}"><small class="mono">${ic("i-arrow-l","width:14px;height:14px")}Previous</small><b>${p.title}</b></a>
@@ -1033,6 +1043,10 @@ function lbStep(d){if(lbList.length<2)return;lbPos=(lbPos+d+lbList.length)%lbLis
 grid.addEventListener("click",e=>{
   const a=e.target.closest("[data-lb]");if(!a||e.metaKey||e.ctrlKey)return;
   e.preventDefault();lbOpen(+a.dataset.lb);
+});
+/* 詳細頁的作品圖：點了放大檢視 */
+document.getElementById("detail").addEventListener("click",e=>{
+  const z=e.target.closest("[data-zoom]");if(z)lbOpen(+z.dataset.zoom);
 });
 document.getElementById("lbX").onclick=lbClose;
 document.getElementById("lbPrev").onclick=()=>lbStep(-1);
