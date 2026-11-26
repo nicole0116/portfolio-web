@@ -483,6 +483,25 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 /* 詳細頁單張作品圖：可點擊放大 */
 button.d-fig{display:block;width:100%;border:0;padding:0;font:inherit;cursor:zoom-in}
 button.d-fig:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.installation{margin:48px 0 64px}
+.installation-scene{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--paper-2)}
+.installation-scene>img{display:block;width:100%;height:100%;object-fit:cover}
+.installation-pointer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 1px 3px #151515)}
+.installation-pointer path{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.installation-label{position:absolute;right:4%;top:64%;padding:12px 18px;background:var(--ink);color:var(--paper);font-size:clamp(14px,1.7vw,22px);font-weight:700;line-height:1.5}
+.installation-label span{display:block;font-size:12px;font-weight:400;letter-spacing:.08em}
+.installation-note{margin:14px 0 32px;color:var(--ink-3);font-size:14px}
+.poster-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 24px}
+.poster-gallery figure{min-width:0}
+.poster-gallery button{display:block;width:100%;padding:0;border:1px solid var(--hair);background:var(--paper-2);cursor:zoom-in}
+.poster-gallery button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.poster-gallery img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain}
+.poster-gallery figcaption{padding-top:14px;border-top:1px solid var(--hair);margin-top:14px}
+.poster-gallery figcaption small{color:var(--accent);font-size:12px}
+.poster-gallery figcaption b{display:block;margin:6px 0;font-size:16px;line-height:1.5}
+.poster-gallery figcaption span{font-size:13px;color:var(--ink-3)}
+@media(max-width:700px){.poster-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}.installation-label{padding:6px 10px;right:3%}.installation-label span{font-size:10px}}
+@media(max-width:420px){.poster-gallery{grid-template-columns:1fr}}
 /* 多尺寸 Banner：詳細頁所有尺寸 */
 .bsets{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;margin:48px 0 64px}
 .bset{min-width:0}

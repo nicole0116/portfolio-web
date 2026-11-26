@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;900&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261126">
+<link rel="stylesheet" href="css/style.css?v=20261126-2">
 </head>
 <body class="guide-off"><!-- 導覽員暫時關閉：移除 guide-off 即可恢復 -->
 
@@ -590,6 +590,19 @@ const WORKS = [
     bg:"露營主題的數位廣告素材，一組推廣韓國自動快速帳商品，兩組招募南澳親子露營活動。每組都要延展成 970×250、640×360、300×250 與 320×50 等常見版位，在不同大小的版面裡維持同樣的主訊息與辨識度。",
     points:["快速帳以「1 秒速開」大字斜體搭配速度感，直接點出商品最大賣點，再用綠色標籤條補充「5~6 人、2 門 2 窗、防水透氣」等規格","親子露營 B 版用「週末人擠人，帶孩子去哪放電？」等提問切入家長痛點，標題字以彩色描邊做出童趣感","親子露營 C 版以橘紅圓形徽章與擴音器圖示強調「KOL 揪團」，搭配山景與帳篷照片營造放空的氛圍","大尺寸保留完整文案與情境照片，小尺寸只留主標與按鈕，依版位重新排列而不是等比縮小","320×50 手機橫幅製作成 GIF，輪播 2～3 個畫面，在極小版位中分段傳達主標與行動按鈕"],
     result:[["3 組","廣告主題"],["11 張","多尺寸延展"]] },
+  { type:"print", tone:"stone", title:"課程燈箱海報系列", year:"2023–2025", img:"images/lightbox/corridor.jpg",
+    installation:true,
+    posters:[
+      {src:"images/lightbox/pmi-pba.jpg",title:"PMI-PBA 國際商業分析師認證",year:"2023"},
+      {src:"images/lightbox/iso-14064.jpg",title:"ISO 14064 溫室氣體主導師／查證師班",year:"2025"},
+      {src:"images/lightbox/agile.jpg",title:"敏捷全方位學習系列課程",year:"2025"},
+      {src:"images/lightbox/pmi-x3.jpg",title:"PMI 三大黃金認證",year:"2025"},
+      {src:"images/lightbox/gen-z.jpg",title:"Z 世代入職攻略",year:"2023"},
+      {src:"images/lightbox/n8n.jpg",title:"n8n 從基礎到 AI 的學習路徑",year:"2025"}],
+    client:"恆逸教育訓練中心", role:"課程主視覺、資訊編排、海報設計", tools:"Photoshop、Illustrator",
+    bg:"為教育訓練空間製作直式課程海報，將認證課程、職涯學習與活動優惠帶入走廊展示情境。以醒目的主標與主視覺吸引目光，再透過分區編排呈現課程特色與學習路徑。",
+    points:["依課程主題建立各自的視覺語言：商業分析的人物與字體合成、永續課程的極地意象、敏捷管理的紫色資訊分區，以及 n8n 的職人工坊情境","直式版面以主標、核心訴求、課程資訊與 QR Code 分層，讓讀者先掌握主題，再閱讀細節","透過圖示、課程卡片與對照表整理資訊，在同一展示比例下呈現不同內容密度"],
+    result:[["6 張","直式課程海報"],["實景","走廊燈箱展示"]] },
   { type:"print", tone:"accent", title:"課程溫度計活動 DM", year:"2024", img:"images/thermometer-flyer.jpg",
     client:"恆逸教育訓練中心", role:"活動視覺、標題字設計、資訊圖表、排版", tools:"Illustrator、Photoshop",
     bg:"公開近三年各類課程修課人次排行的雙面 A4 活動 DM，同時搭配分享抽課程禮券活動。要讓讀者一眼看懂「哪些課程最熱門」，並清楚知道參加活動的步驟。",
@@ -789,7 +802,7 @@ function renderDetail(i){
       <div>${ic("i-tool")}<span><small class="mono">Tools</small><b>${w.tools}</b></span></div>
       <div>${ic("i-clock")}<span><small class="mono">Year</small><b>${w.year}</b></span></div>
     </div>
-    ${w.cs?caseHTML(w):`${w.shots?shotsHTML(w):w.sets?setsHTML(w):w.img?`<button type="button" class="d-fig rv is-img" data-zoom="${i}" data-cursor="放大看" aria-label="放大檢視：${w.title}">${mockup(w)}</button>`:`<div class="d-fig rv">${mockup(w)}</div>`}
+    ${w.cs?caseHTML(w):`${w.installation?installationHTML(w,i):w.shots?shotsHTML(w):w.sets?setsHTML(w):w.img?`<button type="button" class="d-fig rv is-img" data-zoom="${i}" data-cursor="放大看" aria-label="放大檢視：${w.title}">${mockup(w)}</button>`:`<div class="d-fig rv">${mockup(w)}</div>`}
     <div class="d-body">
       ${w.bg?`<section class="rv"><h4><span>01</span>專案背景</h4><p>${w.bg}</p></section>`:""}
       ${w.points?`<section class="rv"><h4><span>02</span>設計策略</h4><ul>${w.points.map(x=>`<li>${x}</li>`).join("")}</ul></section>`:""}
@@ -799,6 +812,18 @@ function renderDetail(i){
       <a href="#work-${pi}"><small class="mono">${ic("i-arrow-l","width:14px;height:14px")}Previous</small><b>${p.title}</b></a>
       <a href="#work-${ni}"><small class="mono">Next ${ic("i-arrow","width:14px;height:14px")}</small><b>${n.title}</b></a>
     </nav>`;
+}
+
+function installationHTML(w,i){
+  return `<section class="installation rv" aria-label="燈箱實景與海報作品">
+    <figure class="installation-scene">
+      <img src="${w.img}" alt="恆逸教育訓練中心走廊的直式課程燈箱展示實景">
+      <svg class="installation-pointer" viewBox="0 0 1600 900" aria-hidden="true"><defs><marker id="poster-pointer" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9"/></marker></defs><path d="M1390 590H1320L1200 390" marker-end="url(#poster-pointer)"/></svg>
+      <figcaption class="installation-label">課程燈箱海報<span>走廊展示實景</span></figcaption>
+    </figure>
+    <p class="installation-note">上圖為現場展示情境；下方為不同檔期的海報設計稿。</p>
+    <div class="poster-gallery">${w.posters.map(p=>`<figure><button type="button" data-zoom="${i}" data-zoom-src="${p.src}" data-zoom-title="${p.title}" aria-label="放大檢視：${p.title}" data-cursor="放大看"><img src="${p.src}" alt="${p.title}完整海報設計" loading="lazy" decoding="async"></button><figcaption><small class="mono">${p.year}</small><b>${p.title}</b><span>點擊放大檢視</span></figcaption></figure>`).join("")}</div>
+  </section>`;
 }
 
 function demoHTML(d){
@@ -1015,20 +1040,21 @@ addEventListener("pointermove",e=>{
 
 /* ===== lightbox ===== */
 const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbStage=document.getElementById("lbStage");
-let lbList=[],lbPos=0,lbLast=null;
+let lbList=[],lbPos=0,lbLast=null,lbAsset=null;
 function lbShow(){
   const w=WORKS[lbList[lbPos]];
   lb.classList.remove("zoom");
-  lbImg.src=w.img;lbImg.alt=w.title;
-  document.getElementById("lbTitle").textContent=w.title;
+  lbImg.src=lbAsset?lbAsset.src:w.img;lbImg.alt=lbAsset?lbAsset.title:w.title;
+  document.getElementById("lbTitle").textContent=lbAsset?lbAsset.title:w.title;
   document.getElementById("lbMeta").textContent=`${w.client}｜${w.year}｜${w.role}`;
   document.getElementById("lbCount").textContent=`${pad(lbPos+1)} / ${pad(lbList.length)}`;
   lb.classList.toggle("single",lbList.length<2);
 }
-function lbOpen(i){
+function lbOpen(i,asset=null){
+  lbAsset=asset;
   /* 左右切換：目前列表中看得到的燈箱作品 */
   lbList=[...grid.querySelectorAll(".work[data-lb]:not(.hide)")].map(el=>+el.dataset.lb);
-  if(!lbList.includes(i))lbList=[i];
+  if(asset||!lbList.includes(i))lbList=[i];
   lbPos=lbList.indexOf(i);lbLast=document.activeElement;
   lbShow();lb.hidden=false;void lb.offsetWidth;lb.classList.add("open");
   document.documentElement.style.overflow="hidden";cur.classList.remove("show");
@@ -1046,7 +1072,7 @@ grid.addEventListener("click",e=>{
 });
 /* 詳細頁的作品圖：點了放大檢視 */
 document.getElementById("detail").addEventListener("click",e=>{
-  const z=e.target.closest("[data-zoom]");if(z)lbOpen(+z.dataset.zoom);
+  const z=e.target.closest("[data-zoom]");if(z)lbOpen(+z.dataset.zoom,z.dataset.zoomSrc?{src:z.dataset.zoomSrc,title:z.dataset.zoomTitle}:null);
 });
 document.getElementById("lbX").onclick=lbClose;
 document.getElementById("lbPrev").onclick=()=>lbStep(-1);
