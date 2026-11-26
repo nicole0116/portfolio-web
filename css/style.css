@@ -474,6 +474,19 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .d-fig img{object-fit:contain;background:var(--paper-2)}
 .d-fig .mk{padding:5% 10%}
 .d-fig.is-img{aspect-ratio:4/3}
+/* 多尺寸 Banner：列表卡片（兩個代表排版） */
+.mk.bn-cover{flex-direction:column;justify-content:center;gap:6%;padding:8%}
+.work .fig .mk.bn-cover img{position:static;inset:auto;height:auto;object-fit:contain;box-shadow:0 10px 24px -14px rgba(0,0,0,.45)}
+.mk.bn-cover img{width:100%}
+/* 多尺寸 Banner：詳細頁所有尺寸 */
+.bsets{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;margin:48px 0 64px}
+.bset{min-width:0}
+.bset .shot-label small{margin-left:auto;color:var(--ink-3)}
+.bset-grid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:32px 28px;background:var(--paper-2);padding:32px}
+.bset-grid figure{margin:0;width:var(--w);max-width:100%}
+.bset-grid img{display:block;width:100%;height:auto;box-shadow:0 12px 28px -16px rgba(0,0,0,.4)}
+.bset-grid figcaption{margin-top:10px;font-size:12px;color:var(--ink-2)}
+@media (max-width:760px){.bset-grid{padding:18px;gap:24px}}
 .d-body{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
 .d-body section h4{display:flex;align-items:center;gap:10px;font-family:var(--serif-tc);font-size:22px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
 .d-body section h4 span{font-family:var(--serif);color:var(--accent);font-size:26px}

@@ -420,6 +420,8 @@
    ============================================================ */
 /* Banner、平面、名片、其他創作：點擊直接放大圖片（燈箱），不進內頁 */
 const LB_TYPES = ["banner","print","card","other"];
+/* 燈箱類作品若有 sets（多尺寸系列），改為進入詳細頁，展示所有尺寸 */
+const isLB = w => LB_TYPES.includes(w.type) && !w.sets;
 const WORKS = [
   { type:"web", hidden:true, tone:"ink", title:"國際資安認證課程形象網站", year:"2025",
     client:"恆逸教育訓練中心", role:"視覺設計、切版、動態效果", tools:"Figma、HTML/CSS、JS、SVG",
@@ -576,6 +578,16 @@ const WORKS = [
     bg:"為行銷團隊設計可重複使用的社群貼文模板，讓非設計人員也能快速產出一致的視覺。",
     points:["建立 6 種版型，因應不同資訊量","色彩依課程類別對應","提供 Canva 模板與使用規範"],
     result:[["6 款","模板版型"],["-60%","製作時間"]] },
+  { type:"banner", tone:"accent", title:"露營用品與親子露營活動 Banner 系列", year:"2019",
+    cover:["images/camping/d-970x250.jpg","images/camping/b-970x250.jpg"],
+    sets:[
+      {name:"A · 韓國自動快速帳（商品銷售）",files:["images/camping/d-970x250.jpg","images/camping/d-640x360.jpg","images/camping/d-300x250.jpg","images/camping/d-320x50.gif"]},
+      {name:"B · 親子露營活動（痛點訴求）",files:["images/camping/b-970x250.jpg","images/camping/b-640x360.jpg","images/camping/b-300x250.jpg","images/camping/b-320x50.gif"]},
+      {name:"C · 親子露營活動（KOL 揪團）",files:["images/camping/c-640x360.jpg","images/camping/c-300x250.jpg","images/camping/c-320x50.gif"]}],
+    client:"露營用品與親子露營活動", role:"廣告文案、主視覺設計、多尺寸延展、GIF 動畫", tools:"Photoshop",
+    bg:"露營主題的數位廣告素材，一組推廣韓國自動快速帳商品，兩組招募南澳親子露營活動。每組都要延展成 970×250、640×360、300×250 與 320×50 等常見版位，在不同大小的版面裡維持同樣的主訊息與辨識度。",
+    points:["快速帳以「1 秒速開」大字斜體搭配速度感，直接點出商品最大賣點，再用綠色標籤條補充「5~6 人、2 門 2 窗、防水透氣」等規格","親子露營 B 版用「週末人擠人，帶孩子去哪放電？」等提問切入家長痛點，標題字以彩色描邊做出童趣感","親子露營 C 版以橘紅圓形徽章與擴音器圖示強調「KOL 揪團」，搭配山景與帳篷照片營造放空的氛圍","大尺寸保留完整文案與情境照片，小尺寸只留主標與按鈕，依版位重新排列而不是等比縮小","320×50 手機橫幅製作成 GIF，輪播 2～3 個畫面，在極小版位中分段傳達主標與行動按鈕"],
+    result:[["3 組","廣告主題"],["11 張","多尺寸延展"]] },
   { type:"print", tone:"accent", title:"課程溫度計活動 DM", year:"2024", img:"images/thermometer-flyer.jpg",
     client:"恆逸教育訓練中心", role:"活動視覺、標題字設計、資訊圖表、排版", tools:"Illustrator、Photoshop",
     bg:"公開近三年各類課程修課人次排行的雙面 A4 活動 DM，同時搭配分享抽課程禮券活動。要讓讀者一眼看懂「哪些課程最熱門」，並清楚知道參加活動的步驟。",
@@ -632,7 +644,7 @@ const WORKS = [
     bg:"旅行時拍攝的照片與短片，並為每支影片設計統一風格的封面，練習用影像說故事。",
     points:["統一的調色風格，讓一系列照片看起來是同一本相簿","封面標題固定在相同位置，形成可辨識的系列感","從拍攝、剪輯到封面設計一手包辦"],
     result:[["○○ 支","Vlog 作品（請填入）"],["1 套","封面版型系統"]] }
-].filter(w=>!w.hidden&&!(LB_TYPES.includes(w.type)&&!w.img)); /* hidden:true 的作品不顯示；燈箱類作品沒有實際圖片（img）也先不顯示，補上圖片即會出現 */
+].filter(w=>!w.hidden&&!(LB_TYPES.includes(w.type)&&!w.img&&!w.sets)); /* hidden:true 的作品不顯示；燈箱類作品沒有實際圖片（img）也先不顯示，補上圖片即會出現 */
 const CAT = { web:["網站設計","i-web"], edm:["一頁式 EDM","i-edm"], banner:["Banner 設計","i-banner"], print:["平面設計","i-print"], card:["名片設計","i-card"], ai:["AI 流程優化","i-flow"], other:["其他創作","i-sparkle"] };
 const TONE = { ink:["#151515","#f7f7f4"], accent:["#c8462c","#f7f7f4"], stone:["#d6d6d2","#151515"] };
 const PAGES = ["home","about","works","experience","contact"];
@@ -641,6 +653,8 @@ const ic = (id,s="") => `<svg class="ic" ${s?`style="${s}"`:""}><use href="#${id
 const pad = n => String(n).padStart(2,"0");
 
 function mockup(w){
+  /* 多尺寸 Banner：列表卡片並排展示兩個代表排版 */
+  if(w.cover)return `<div class="mk bn-cover">${w.cover.map((s,k)=>`<img class="c${k}" src="${s}" alt="${w.title}" loading="lazy" decoding="async">`).join("")}</div>`;
   if(w.shots){const th=f=>f.replace("images/","images/thumbs/");
     return `<div class="mk dev"><div class="dev-browser"><div class="bar"><i></i><i></i><i></i><u></u></div><div class="pg"><img src="${th(w.shots.desktop)}" alt="${w.title}（電腦版）" loading="lazy" decoding="async"></div></div><div class="dev-phone"><img src="${th(w.shots.mobile)}" alt="${w.title}（手機版）" loading="lazy" decoding="async"></div></div>`;}
   if(w.img)return `<img src="${w.img}" alt="${w.title}" loading="lazy">`;
@@ -696,7 +710,7 @@ let curFilter="all";
 const workNo=i=>{const t=WORKS[i].type;return curFilter==="all"||curFilter!==t?i+1:WORKS.slice(0,i+1).filter(w=>w.type===t).length};
 const grid=document.getElementById("worksGrid");
 grid.innerHTML=WORKS.map((w,i)=>`
-  <a class="work rv ${w.feature?"feature":""}" href="${LB_TYPES.includes(w.type)?w.img:"#work-"+(i+1)}" ${LB_TYPES.includes(w.type)?`data-lb="${i}" data-cursor="放大看"`:"data-cursor"} data-type="${w.type}">
+  <a class="work rv ${w.feature?"feature":""}" href="${isLB(w)?w.img:"#work-"+(i+1)}" ${isLB(w)?`data-lb="${i}" data-cursor="放大看"`:"data-cursor"} data-type="${w.type}">
     <div class="fig">${mockup(w)}</div>
     <div class="meta"><span class="no">${pad(i+1)}</span><div><h3>${w.title}</h3><div class="cat">${ic(CAT[w.type][1])}${CAT[w.type][0]}</div></div><span class="yr">${w.year}</span></div>
   </a>`).join("");
@@ -753,7 +767,7 @@ function caseHTML(w){
       `<p>修好這一次還不夠，還要讓問題不會再發生：</p><ul class="cs-list">${c.prevent.map(x=>`<li>${ic(x.i)}<span><b>${x.t}</b>${x.d}</span></li>`).join("")}</ul>`):""}`;
 }
 function renderDetail(i){
-  const w=WORKS[i], L=WORKS.length, ok=k=>!LB_TYPES.includes(WORKS[k].type);
+  const w=WORKS[i], L=WORKS.length, ok=k=>!isLB(WORKS[k]);
   let a=i,b=i;do{a=(a-1+L)%L}while(!ok(a)&&a!==i);do{b=(b+1)%L}while(!ok(b)&&b!==i);
   const p=WORKS[a], n=WORKS[b], pi=a+1, ni=b+1;
   document.getElementById("detail").innerHTML=`
@@ -765,7 +779,7 @@ function renderDetail(i){
       <div>${ic("i-tool")}<span><small class="mono">Tools</small><b>${w.tools}</b></span></div>
       <div>${ic("i-clock")}<span><small class="mono">Year</small><b>${w.year}</b></span></div>
     </div>
-    ${w.cs?caseHTML(w):`${w.shots?shotsHTML(w):`<div class="d-fig rv ${w.img?"is-img":""}">${mockup(w)}</div>`}
+    ${w.cs?caseHTML(w):`${w.shots?shotsHTML(w):w.sets?setsHTML(w):`<div class="d-fig rv ${w.img?"is-img":""}">${mockup(w)}</div>`}
     <div class="d-body">
       <section class="rv"><h4><span>01</span>專案背景</h4><p>${w.bg}</p></section>
       <section class="rv"><h4><span>02</span>設計策略</h4><ul>${w.points.map(x=>`<li>${x}</li>`).join("")}</ul></section>
@@ -801,6 +815,16 @@ function demoGo(btn){
 document.addEventListener("click",e=>{const b=e.target.closest(".demo-steps button");b&&demoGo(b)});
 document.addEventListener("mouseover",e=>{const b=e.target.closest(".demo-steps button");b&&matchMedia("(hover:hover)").matches&&demoGo(b)});
 document.addEventListener("focusin",e=>{const b=e.target.closest(".demo-steps button");b&&demoGo(b)});
+/* 多尺寸 Banner：依系列列出所有 resize 尺寸，以原始大小顯示 */
+function setsHTML(w){
+  return `<section class="bsets">${w.sets.map(s=>`
+    <div class="bset rv">
+      <div class="shot-label mono">${ic("i-banner","width:16px;height:16px")}${s.name}<small>${s.files.length} 種尺寸</small></div>
+      <div class="bset-grid">${s.files.map(f=>{const sz=f.match(/(\d+)x(\d+)\.\w+$/);return `
+        <figure style="--w:${sz[1]}px"><img src="${f}" width="${sz[1]}" height="${sz[2]}" alt="${w.title}：${s.name} ${sz[1]}×${sz[2]}" loading="lazy" decoding="async"><figcaption class="mono">${sz[1]} × ${sz[2]}${/\.gif$/.test(f)?" · GIF 動態":""}</figcaption></figure>`}).join("")}
+      </div>
+    </div>`).join("")}</section>`;
+}
 function shotsHTML(w){
   return `<section class="shots">
     <div class="shot-col rv">
